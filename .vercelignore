@@ -1,0 +1,5 @@
+# Keep image masters and verification artifacts off the public host.
+assets/img/_originals/
+_verify/
+deploy.sh
+README.md
