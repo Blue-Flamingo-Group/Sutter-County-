@@ -1,0 +1,1162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<!-- NOINDEX until the committee approves launch. Remove this line to go live. -->
+<meta name="robots" content="noindex, nofollow" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Yes on Measure G — Protect the Services That Protect Sutter County</title>
+<meta name="description" content="Vote YES on Measure G on November 3, 2026. A locally controlled measure to protect fire and 911 response, sheriff and police patrols, reliable drinking water, road repairs and essential local services in Sutter County." />
+<meta name="theme-color" content="#0b1c2c" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%230b1c2c'/%3E%3Cpath d='M8 17l5 5 11-12' stroke='%23f3b539' stroke-width='4' fill='none' stroke-linecap='square'/%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500;600;700;800;900&family=Public+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+<style>
+/* ==========================================================================
+   YES ON MEASURE G — Sutter County · November 3, 2026
+   Single-file static campaign page. No build step, no dependencies.
+   Palette: navy / cobalt / campaign gold.  Type: Big Shoulders Display + Public Sans.
+   ========================================================================== */
+
+:root{
+  /* --- navy stack --- */
+  --navy-950:#071624;
+  --navy-900:#0b1c2c;
+  --navy-800:#10283c;
+  --navy-700:#173d59;
+  --navy-600:#1f5075;
+
+  /* --- cobalt --- */
+  --cobalt:#1450cc;
+  --cobalt-600:#1a5ee0;
+  --cobalt-400:#4d86f0;
+  --cobalt-100:#d7e4fb;
+
+  /* --- campaign gold --- */
+  --gold:#f3b539;
+  --gold-600:#dd9a17;
+  --gold-300:#ffd680;
+  --gold-050:#fdf3dd;
+
+  /* --- neutrals --- */
+  --paper:#ffffff;
+  --cream:#faf5ea;
+  --cream-2:#f2ead9;
+  --ink:#101d28;
+  --ink-2:#3b4b58;
+  --ink-3:#63737f;
+  --hair-d:rgba(255,255,255,.14);
+  --hair-l:rgba(16,29,40,.12);
+
+  --maxw:1180px;
+  --pad:24px;
+  --r:4px;
+  --shadow:0 30px 70px -28px rgba(7,22,36,.55);
+  --shadow-sm:0 14px 34px -16px rgba(7,22,36,.4);
+}
+
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  font-family:'Public Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
+  color:var(--ink);
+  background:var(--paper);
+  font-size:17px;
+  line-height:1.62;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button,input,textarea,select{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+::selection{background:var(--gold);color:var(--navy-900)}
+
+h1,h2,h3,.display{
+  font-family:'Big Shoulders Display','Big Shoulders',Impact,sans-serif;
+  font-weight:800;line-height:.94;letter-spacing:-.01em;text-transform:uppercase;
+}
+h1{font-size:clamp(44px,9.4vw,92px)}
+h2{font-size:clamp(32px,6.4vw,60px)}
+h3{font-size:clamp(21px,3.4vw,26px);line-height:1.02}
+
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 var(--pad);width:100%}
+section{padding:76px 0}
+.tight{padding:56px 0}
+
+/* ---------- shared bits ---------- */
+.eyebrow{
+  font-family:'Big Shoulders Display','Big Shoulders',sans-serif;
+  font-weight:700;text-transform:uppercase;letter-spacing:.22em;
+  font-size:14px;color:var(--cobalt);
+  display:flex;align-items:center;gap:11px;margin-bottom:16px;
+}
+.eyebrow::before{content:"";width:26px;height:3px;background:var(--gold);flex:none}
+.eyebrow.on-dark{color:var(--gold-300)}
+.eyebrow.centered{justify-content:center}
+
+.lead{font-size:clamp(17px,2.2vw,20px);line-height:1.55;color:var(--ink-2);max-width:62ch}
+.on-dark .lead,.lead.on-dark{color:#c3d3e0}
+.small{font-size:14px;line-height:1.55;color:var(--ink-3)}
+
+.section-head{max-width:760px;margin-bottom:44px}
+.section-head.centered{margin-left:auto;margin-right:auto;text-align:center}
+.section-head.centered .lead{margin-left:auto;margin-right:auto}
+.section-head h2{margin-bottom:18px}
+h2+.lead,h2+p{margin-top:18px}
+
+/* ---------- buttons ---------- */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  font-family:'Big Shoulders Display','Big Shoulders',sans-serif;
+  font-weight:800;text-transform:uppercase;letter-spacing:.09em;
+  font-size:18px;line-height:1;padding:17px 26px 15px;border-radius:var(--r);
+  border:2px solid transparent;cursor:pointer;transition:.18s ease;
+  text-align:center;white-space:nowrap;
+}
+.btn-gold{background:var(--gold);color:var(--navy-900);border-color:var(--gold)}
+.btn-gold:hover{background:var(--gold-300);border-color:var(--gold-300);transform:translateY(-2px)}
+.btn-cobalt{background:var(--cobalt);color:#fff;border-color:var(--cobalt)}
+.btn-cobalt:hover{background:var(--cobalt-600);border-color:var(--cobalt-600);transform:translateY(-2px)}
+.btn-navy{background:var(--navy-900);color:#fff;border-color:var(--navy-900)}
+.btn-navy:hover{background:var(--navy-700);border-color:var(--navy-700);transform:translateY(-2px)}
+.btn-ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.42)}
+.btn-ghost:hover{border-color:#fff;background:rgba(255,255,255,.1)}
+.btn-outline{background:transparent;color:var(--navy-800);border-color:rgba(16,40,60,.3)}
+.btn-outline:hover{border-color:var(--navy-800);background:rgba(16,40,60,.05)}
+.btn-row{display:flex;gap:12px;flex-wrap:wrap}
+.btn-row.centered{justify-content:center}
+.btn-block{width:100%}
+
+/* ---------- election banner ---------- */
+.topline{
+  background:var(--cobalt);color:#fff;text-align:center;
+  font-family:'Big Shoulders Display','Big Shoulders',sans-serif;font-weight:700;
+  letter-spacing:.2em;font-size:13px;text-transform:uppercase;
+  padding:9px 16px 7px;
+}
+.topline b{color:var(--gold-300);font-weight:800}
+
+/* ---------- sticky nav ---------- */
+.nav{position:sticky;top:0;z-index:80;background:var(--navy-900);box-shadow:0 1px 0 var(--hair-d);transition:box-shadow .2s ease}
+.nav.scrolled{box-shadow:0 12px 34px -18px rgba(0,0,0,.8)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:70px;padding-top:10px;padding-bottom:10px}
+.brand{display:flex;align-items:center;gap:12px;flex:none}
+.brandmark{
+  width:46px;height:46px;flex:none;border-radius:var(--r);
+  background:var(--gold);color:var(--navy-900);
+  display:grid;place-items:center;
+  font-family:'Big Shoulders Display','Big Shoulders',sans-serif;
+  font-weight:900;font-size:31px;line-height:1;padding-top:3px;
+}
+.brandtext{display:flex;flex-direction:column;line-height:1}
+.brandtext strong{
+  font-family:'Big Shoulders Display','Big Shoulders',sans-serif;font-weight:800;
+  font-size:23px;letter-spacing:.02em;color:#fff;text-transform:uppercase;
+}
+.brandtext small{font-size:10px;letter-spacing:.19em;text-transform:uppercase;color:var(--cobalt-400);margin-top:5px;font-weight:600}
+.navlinks{display:flex;align-items:center;gap:26px}
+.navlinks a.lnk{font-size:14.5px;font-weight:600;color:#dbe6f0;position:relative;padding:4px 0}
+.navlinks a.lnk::after{content:"";position:absolute;left:0;bottom:0;height:2px;width:0;background:var(--gold);transition:width .2s ease}
+.navlinks a.lnk:hover::after{width:100%}
+.nav .btn{font-size:15px;padding:11px 17px 9px}
+.burger{display:none;background:none;border:0;cursor:pointer;padding:8px;flex-direction:column;gap:5px}
+.burger span{display:block;width:24px;height:2px;background:#fff;transition:.2s}
+.mobile-cta{display:none}
+
+/* ---------- hero ---------- */
+.hero{position:relative;overflow:hidden;background:var(--navy-900);color:#fff;padding:64px 0 0}
+.hero .bg{position:absolute;inset:0;z-index:0}
+.hero .bg img{width:100%;height:100%;object-fit:cover;object-position:50% 42%;filter:blur(3px) saturate(.5) contrast(1.05);opacity:.3;transform:scale(1.08)}
+.hero .grad{
+  position:absolute;inset:0;z-index:1;
+  background:
+    radial-gradient(120% 80% at 12% 0%, rgba(20,80,204,.42) 0%, rgba(11,28,44,0) 62%),
+    linear-gradient(178deg, rgba(7,22,36,.82) 0%, rgba(11,28,44,.9) 46%, rgba(7,22,36,.99) 100%);
+}
+.hero .rules{
+  position:absolute;inset:0;z-index:1;opacity:.5;
+  background-image:repeating-linear-gradient(115deg, rgba(255,255,255,.05) 0 1px, transparent 1px 13px);
+}
+.hero .wrap{position:relative;z-index:2}
+.hero-inner{padding-bottom:74px;max-width:980px}
+.hero .kicker{
+  display:inline-flex;align-items:center;gap:10px;
+  font-family:'Big Shoulders Display','Big Shoulders',sans-serif;font-weight:700;
+  text-transform:uppercase;letter-spacing:.19em;font-size:13.5px;color:var(--gold);
+  border:1.5px solid rgba(243,181,57,.42);border-radius:100px;padding:8px 16px 6px;
+}
+.hero h1{margin:26px 0 0;color:#fff}
+.hero h1 .hl{
+  color:var(--navy-900);background:var(--gold);
+  padding:0 .12em .06em;box-decoration-break:clone;-webkit-box-decoration-break:clone;
+}
+.hero p.lead{color:#c9dae8;margin:26px 0 0;max-width:56ch;font-weight:400}
+.pills{display:flex;flex-wrap:wrap;gap:8px;margin:28px 0 0}
+.pill{
+  font-family:'Big Shoulders Display','Big Shoulders',sans-serif;font-weight:700;
+  text-transform:uppercase;letter-spacing:.11em;font-size:14px;
+  background:rgba(255,255,255,.07);border:1px solid var(--hair-d);
+  color:#e4eef7;padding:8px 14px 6px;border-radius:100px;
+}
+.hero .btn-row{margin-top:34px}
+
+/* ---------- service bar ---------- */
+.servicebar{background:var(--navy-800);border-top:4px solid var(--gold);position:relative;z-index:3}
+.servicebar .grid{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--hair-d)}
+.svc{
+  background:var(--navy-800);padding:30px 18px 28px;text-align:center;color:#fff;
+  display:flex;flex-direction:column;align-items:center;gap:12px;transition:background .2s ease;
+}
+.svc:hover{background:var(--navy-700)}
+.svc svg{width:34px;height:34px;color:var(--gold);flex:none}
+.svc b{
+  font-family:'Big Shoulders Display','Big Shoulders',sans-serif;font-weight:700;
+  text-transform:uppercase;letter-spacing:.08em;font-size:18px;line-height:1.05;
+}
+.svc span{font-size:12.5px;color:#9fb6c8;line-height:1.35;display:block}
+
+/* ---------- why / cards ---------- */
+.why{background:var(--paper)}
+.cards-3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.card{
+  background:var(--paper);border:1px solid var(--hair-l);border-radius:var(--r);
+  padding:32px 28px 34px;transition:.2s ease;position:relative;overflow:hidden;
+}
+.card::before{content:"";position:absolute;left:0;top:0;height:4px;width:0;background:var(--gold);transition:width .28s ease}
+.card:hover{transform:translateY(-3px);box-shadow:var(--shadow-sm);border-color:transparent}
+.card:hover::before{width:100%}
+.card .ic{width:44px;height:44px;color:var(--cobalt);margin-bottom:20px}
+.card h3{margin-bottom:10px}
+.card p{font-size:15.5px;color:var(--ink-2)}
+
+/* ---------- photo strip ---------- */
+.photos{background:var(--cream)}
+.photos .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.photo-card{border-radius:var(--r);overflow:hidden;background:var(--navy-800);box-shadow:var(--shadow-sm)}
+/* Duotone treatment: these are low-resolution reference photos. The navy wash
+   plus grayscale hides resolution and unifies them. Real campaign photography
+   drops straight into these <img> slots — remove .duo to show full color. */
+.duo{position:relative;aspect-ratio:4/3;overflow:hidden;background:var(--navy-900)}
+.duo img{width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.3) brightness(1.16)}
+.duo::after{content:"";position:absolute;inset:0;background:var(--navy-600);mix-blend-mode:multiply}
+.duo::before{
+  content:"";position:absolute;inset:0;z-index:2;pointer-events:none;
+  background:linear-gradient(200deg, rgba(243,181,57,.2) 0%, rgba(20,80,204,.2) 52%, rgba(7,22,36,.55) 100%);
+  mix-blend-mode:screen;
+}
+.photo-card .label{
+  padding:20px 22px 22px;color:#e6eef6;font-size:15px;line-height:1.45;
+  border-top:3px solid var(--gold);background:var(--navy-800);
+}
+.photo-card .label b{display:block;font-family:'Big Shoulders Display','Big Shoulders',sans-serif;
+  font-weight:700;text-transform:uppercase;letter-spacing:.13em;font-size:12.5px;color:var(--gold-300);margin-bottom:7px}
+
+/* ---------- stakes (dark) ---------- */
+.stakes{background:var(--navy-900);color:#fff;position:relative;overflow:hidden}
+.stakes::before{content:"";position:absolute;inset:0;
+  background:radial-gradient(90% 70% at 88% 8%, rgba(20,80,204,.3), transparent 62%)}
+.stakes .wrap{position:relative;z-index:2}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:52px;align-items:start}
+.stakes h2{color:#fff}
+.stakes .lead{color:#c3d3e0}
+.stakes .panel{background:rgba(255,255,255,.05);border:1px solid var(--hair-d);border-left:4px solid var(--gold);border-radius:var(--r);padding:30px 28px}
+.stakes .panel h3{color:var(--gold-300);font-size:20px;letter-spacing:.03em;margin-bottom:18px}
+.risklist{list-style:none;display:flex;flex-direction:column;gap:14px}
+.risklist li{display:flex;gap:13px;align-items:flex-start;color:#dbe7f1;font-size:16px;line-height:1.45}
+.risklist svg{width:21px;height:21px;flex:none;color:#ff8b7a;margin-top:2px}
+.stakes .stamp{
+  margin-top:26px;font-family:'Big Shoulders Display','Big Shoulders',sans-serif;font-weight:800;
+  text-transform:uppercase;font-size:clamp(19px,2.6vw,25px);line-height:1.1;color:#fff;
+  border-top:1px solid var(--hair-d);padding-top:22px;letter-spacing:.01em;
+}
+.stakes .stamp em{color:var(--gold);font-style:normal}
+
+/* ---------- accountability (the prominent one) ---------- */
+.accountability{background:var(--cream);position:relative;padding-bottom:84px}
+.accountability::before{content:"";position:absolute;inset:0 0 auto 0;height:6px;
+  background:linear-gradient(90deg,var(--gold) 0%,var(--gold) 33%,var(--cobalt) 33%,var(--cobalt) 66%,var(--navy-800) 66%)}
+.seal{
+  width:82px;height:82px;margin:0 auto 22px;border-radius:50%;
+  background:var(--navy-900);color:var(--gold);display:grid;place-items:center;
+  box-shadow:0 0 0 5px var(--cream),0 0 0 8px var(--gold);
+}
+.seal svg{width:40px;height:40px}
+.guards{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:8px}
+.guard{
+  background:var(--paper);border:1px solid var(--hair-l);border-top:5px solid var(--cobalt);
+  border-radius:var(--r);padding:30px 24px 30px;text-align:center;transition:.2s ease;
+}
+.guard:hover{transform:translateY(-4px);box-shadow:var(--shadow-sm)}
+.guard .n{
+  font-family:'Big Shoulders Display','Big Shoulders',sans-serif;font-weight:900;font-size:15px;
+  letter-spacing:.14em;color:var(--cobalt);display:block;margin-bottom:14px;
+}
+.guard .ic{width:42px;height:42px;color:var(--navy-800);margin:0 auto 16px}
+.guard h3{font-size:22px;margin-bottom:9px}
+.guard p{font-size:14.5px;color:var(--ink-2);line-height:1.5}
+.localbar{
+  margin-top:34px;background:var(--navy-900);border-radius:var(--r);color:#fff;
+  padding:34px 34px;display:flex;align-items:center;gap:26px;flex-wrap:wrap;justify-content:space-between;
+}
+.localbar .txt{max-width:64ch}
+.localbar .txt b{
+  display:block;font-family:'Big Shoulders Display','Big Shoulders',sans-serif;font-weight:800;
+  text-transform:uppercase;font-size:clamp(24px,3.4vw,34px);line-height:1;margin-bottom:12px;
+}
+.localbar .txt b em{color:var(--gold);font-style:normal}
+.localbar .txt span{color:#bccddb;font-size:15.5px;display:block}
+.official{text-align:center;margin-top:22px;font-size:14px;color:var(--ink-3)}
+.official a{color:var(--cobalt);font-weight:600;text-decoration:underline;text-underline-offset:3px}
+
+/* ---------- endorsers ---------- */
+.endorsers{background:var(--paper)}
+.featured{
+  display:grid;grid-template-columns:300px 1fr;gap:0;background:var(--navy-900);
+  border-radius:var(--r);overflow:hidden;box-shadow:var(--shadow);margin-bottom:34px;
+}
+/* Portrait slot — swap this block for <img src="assets/img/barnes.jpg" alt="Sheriff Brandon Barnes"> */
+.portrait{
+  background:linear-gradient(160deg,var(--navy-700),var(--navy-950));
+  min-height:300px;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:12px;color:#7f9bb3;text-align:center;padding:26px;border-right:1px solid var(--hair-d);
+}
+.portrait svg{width:60px;height:60px;opacity:.5}
+.portrait span{font-family:'Big Shoulders Display','Big Shoulders',sans-serif;font-weight:700;
+  text-transform:uppercase;letter-spacing:.15em;font-size:12px;line-height:1.5}
+.featured .body{padding:38px 40px 36px;color:#fff;display:flex;flex-direction:column;justify-content:center}
+.featured blockquote{
+  font-family:'Big Shoulders Display','Big Shoulders',sans-serif;font-weight:700;
+  text-transform:uppercase;font-size:clamp(26px,4.2vw,44px);line-height:.98;color:#fff;margin:6px 0 20px;
+}
+.featured blockquote em{color:var(--gold);font-style:normal}
+.featured .who{border-left:4px solid var(--gold);padding-left:16px}
+.featured .who strong{display:block;font-size:19px;font-weight:700;color:#fff;line-height:1.2}
+.featured .who span{font-size:14px;color:#9fb6c8}
+.wall{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.slot{
+  border:2px dashed rgba(20,80,204,.32);border-radius:var(--r);background:var(--cobalt-100);
+  padding:24px 18px;text-align:center;transition:.2s ease;
+}
+.slot:hover{background:var(--gold-050);border-color:var(--gold-600)}
+.slot strong{
+  display:block;font-family:'Big Shoulders Display','Big Shoulders',sans-serif;font-weight:800;
+  text-transform:uppercase;font-size:19px;line-height:1.02;color:var(--navy-800);margin-bottom:8px;
+}
+.slot span{display:block;font-size:12.5px;letter-spacing:.09em;text-transform:uppercase;font-weight:600;color:var(--cobalt)}
+.wall-note{text-align:center;margin-top:26px}
+.counter{
+  display:inline-flex;align-items:baseline;gap:10px;background:var(--navy-900);color:#fff;
+  border-radius:100px;padding:11px 22px 9px;margin-bottom:20px;
+}
+.counter b{font-family:'Big Shoulders Display','Big Shoulders',sans-serif;font-weight:900;font-size:26px;color:var(--gold);line-height:1}
+.counter span{font-size:13px;letter-spacing:.13em;text-transform:uppercase;font-weight:600;color:#bccddb}
+
+/* ---------- ballot argument ---------- */
+.argument{background:var(--cream)}
+details.arg{background:var(--paper);border:1px solid var(--hair-l);border-radius:var(--r);box-shadow:var(--shadow-sm);overflow:hidden}
+details.arg>summary{
+  list-style:none;cursor:pointer;padding:26px 28px;display:flex;align-items:center;gap:16px;
+  background:var(--navy-900);color:#fff;transition:background .18s ease;
+}
+details.arg>summary::-webkit-details-marker{display:none}
+details.arg>summary:hover{background:var(--navy-700)}
+details.arg>summary .txt{
+  flex:1;font-family:'Big Shoulders Display','Big Shoulders',sans-serif;font-weight:800;
+  text-transform:uppercase;font-size:clamp(20px,3vw,27px);line-height:1.02;letter-spacing:.01em;
+}
+details.arg>summary .chev{
+  width:38px;height:38px;flex:none;border-radius:50%;background:var(--gold);color:var(--navy-900);
+  display:grid;place-items:center;transition:transform .24s ease;
+}
+details.arg>summary .chev svg{width:20px;height:20px}
+details.arg[open]>summary .chev{transform:rotate(180deg)}
+.arg-body{padding:34px 32px 38px;max-width:78ch}
+.arg-body p{margin-bottom:16px;font-size:16.5px;color:var(--ink-2);line-height:1.68}
+.arg-body p strong{color:var(--ink)}
+.arg-body ul{list-style:none;margin:0 0 20px;display:flex;flex-direction:column;gap:10px}
+.arg-body li{display:flex;gap:12px;align-items:flex-start;font-size:16px;color:var(--ink-2)}
+.arg-body li svg{width:20px;height:20px;flex:none;color:var(--cobalt);margin-top:3px}
+.arg-body .closer{
+  font-family:'Big Shoulders Display','Big Shoulders',sans-serif;font-weight:800;text-transform:uppercase;
+  font-size:clamp(22px,3.4vw,30px);line-height:1.02;color:var(--navy-900);
+  border-top:3px solid var(--gold);padding-top:22px;margin-top:26px;
+}
+.pending{
+  display:flex;gap:11px;align-items:flex-start;background:var(--gold-050);border:1px solid rgba(221,154,23,.35);
+  border-radius:var(--r);padding:14px 16px;margin-bottom:24px;font-size:14px;color:#6b5010;line-height:1.5;
+}
+.pending svg{width:19px;height:19px;flex:none;color:var(--gold-600);margin-top:2px}
+
+/* ---------- endorse form ---------- */
+.endorse{background:var(--navy-900);color:#fff;position:relative;overflow:hidden}
+.endorse::before{content:"";position:absolute;inset:0;background:radial-gradient(80% 70% at 8% 12%,rgba(20,80,204,.32),transparent 60%)}
+.endorse .wrap{position:relative;z-index:2}
+.endorse h2{color:#fff}
+.endorse .lead{color:#c3d3e0}
+.asklist{list-style:none;margin-top:26px;display:flex;flex-direction:column;gap:12px}
+.asklist li{display:flex;gap:12px;align-items:flex-start;color:#d5e2ed;font-size:15.5px}
+.asklist svg{width:20px;height:20px;flex:none;color:var(--gold);margin-top:3px}
+.formcard{background:var(--paper);border-radius:var(--r);padding:32px 30px 34px;box-shadow:var(--shadow);color:var(--ink)}
+.formcard h3{margin-bottom:6px}
+.formcard>p.small{margin-bottom:22px}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}
+.field{display:flex;flex-direction:column;gap:6px;margin-bottom:14px}
+.frow .field{margin-bottom:0}
+.field label{font-size:13px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--ink-2)}
+.field input,.field textarea{
+  border:1.5px solid rgba(16,29,40,.2);border-radius:var(--r);padding:12px 13px;font-size:16px;
+  background:#fff;transition:.16s ease;width:100%;
+}
+.field input:focus,.field textarea:focus{border-color:var(--cobalt);outline:none;box-shadow:0 0 0 3px rgba(20,80,204,.15)}
+.field textarea{min-height:88px;resize:vertical;font-family:inherit}
+.consent{display:flex;gap:11px;align-items:flex-start;font-size:14px;color:var(--ink-2);line-height:1.5;margin:6px 0 20px}
+.consent input{width:20px;height:20px;flex:none;margin-top:2px;accent-color:var(--cobalt)}
+.thanks{
+  display:none;text-align:center;padding:34px 10px 30px;
+}
+.thanks.show{display:block}
+.thanks .tick{width:64px;height:64px;margin:0 auto 18px;border-radius:50%;background:var(--gold);color:var(--navy-900);display:grid;place-items:center}
+.thanks .tick svg{width:32px;height:32px}
+.thanks h3{margin-bottom:10px}
+.thanks p{font-size:15.5px;color:var(--ink-2);max-width:44ch;margin:0 auto 8px}
+.thanks p.small{font-size:13.5px;color:var(--ink-3);border-top:1px solid var(--hair-l);padding-top:14px}
+
+/* ---------- donate ---------- */
+.donate{background:var(--gold)}
+.donatepanel{display:grid;grid-template-columns:1.25fr .75fr;gap:44px;align-items:center}
+.donate .eyebrow{color:#6b5010}
+.donate .eyebrow::before{background:var(--navy-900)}
+.donate h2{color:var(--navy-950)}
+.donate .lead{color:#4d3c0d}
+.donatebox{background:var(--navy-900);border-radius:var(--r);padding:30px 28px 32px;text-align:center;box-shadow:var(--shadow)}
+.amt-label{font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;font-weight:700;color:#8fa8bd;margin-bottom:10px}
+.donatebox .amt{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:18px;opacity:.72}
+.donatebox .amt span{
+  border:1.5px solid var(--hair-d);border-radius:var(--r);padding:12px 4px 10px;color:#e6eef6;
+  font-family:'Big Shoulders Display','Big Shoulders',sans-serif;font-weight:800;font-size:20px;line-height:1;
+}
+.soon{
+  margin-top:16px;background:rgba(255,255,255,.06);border:1px solid var(--hair-d);border-radius:var(--r);
+  padding:15px 16px;text-align:left;display:flex;gap:11px;align-items:flex-start;
+}
+.soon svg{width:20px;height:20px;flex:none;color:var(--gold);margin-top:2px}
+.soon p{font-size:13.5px;line-height:1.5;color:#c3d3e0}
+.soon p b{color:#fff;display:block;font-size:14px;margin-bottom:3px}
+
+/* ---------- share ---------- */
+.share{background:var(--paper)}
+.sharebox{background:var(--cream);border:1px solid var(--hair-l);border-left:5px solid var(--cobalt);border-radius:var(--r);padding:30px 28px}
+.sharebox h3{margin-bottom:14px}
+.sharecopy{
+  background:var(--paper);border:1px solid var(--hair-l);border-radius:var(--r);padding:18px 20px;
+  font-size:16px;line-height:1.6;color:var(--ink-2);margin-bottom:18px;
+}
+#copyStatus{min-height:20px;margin-top:10px;font-weight:600;color:var(--cobalt)}
+
+/* ---------- final CTA ---------- */
+.finalcta{background:var(--navy-950);color:#fff;text-align:center;position:relative;overflow:hidden}
+.finalcta::before{content:"";position:absolute;inset:0;
+  background:radial-gradient(70% 90% at 50% 0%,rgba(20,80,204,.36),transparent 66%)}
+.finalcta .wrap{position:relative;z-index:2}
+.datebadge{
+  display:inline-flex;flex-direction:column;align-items:center;background:var(--gold);color:var(--navy-950);
+  border-radius:var(--r);padding:14px 30px 12px;margin-bottom:26px;line-height:1;
+}
+.datebadge b{font-family:'Big Shoulders Display','Big Shoulders',sans-serif;font-weight:900;font-size:clamp(30px,5vw,44px)}
+.datebadge span{font-size:12px;letter-spacing:.22em;text-transform:uppercase;font-weight:700;margin-top:7px}
+.finalcta h2{color:#fff;font-size:clamp(38px,8.5vw,84px)}
+.finalcta .lead{color:#c3d3e0;margin:22px auto 0;text-align:center}
+.finalcta .btn-row{margin-top:34px}
+
+/* ---------- footer ---------- */
+footer{background:#050f1a;color:#93a9bb;padding:56px 0 0;font-size:14.5px}
+.footgrid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:36px;padding-bottom:38px}
+footer .brandtext small{color:var(--cobalt-400)}
+footer h4{
+  font-family:'Big Shoulders Display','Big Shoulders',sans-serif;font-weight:800;text-transform:uppercase;
+  letter-spacing:.11em;font-size:16px;color:#fff;margin-bottom:14px;
+}
+footer a:hover{color:var(--gold)}
+footer ul{list-style:none;display:flex;flex-direction:column;gap:9px}
+.socials{display:flex;gap:10px;margin-top:6px}
+.socials a{
+  width:40px;height:40px;border:1px solid var(--hair-d);border-radius:var(--r);display:grid;place-items:center;
+  color:#93a9bb;transition:.18s ease;
+}
+.socials a:hover{background:var(--gold);border-color:var(--gold);color:var(--navy-900)}
+.socials svg{width:19px;height:19px}
+.footnote{max-width:62ch;margin-top:16px;font-size:13.5px;line-height:1.6;color:#7b91a4}
+.disclosure{
+  border-top:1px solid rgba(255,255,255,.1);padding:22px 0 26px;text-align:center;
+  font-family:'Big Shoulders Display','Big Shoulders',sans-serif;font-weight:700;
+  text-transform:uppercase;letter-spacing:.13em;font-size:13.5px;color:#cddaE5;line-height:1.7;
+}
+.disclosure .fppc{color:var(--gold-300)}
+.colophon{border-top:1px solid rgba(255,255,255,.06);padding:16px 0 24px;text-align:center;font-size:12.5px;color:#5f7387}
+
+/* ==========================================================================
+   Responsive
+   ========================================================================== */
+@media (max-width:1040px){
+  .servicebar .grid{grid-template-columns:repeat(3,1fr)}
+  .guards{grid-template-columns:repeat(2,1fr)}
+  .wall{grid-template-columns:repeat(3,1fr)}
+  .footgrid{grid-template-columns:1fr 1fr}
+}
+@media (max-width:900px){
+  section{padding:60px 0}
+  .navlinks a.lnk{display:none}
+  .burger{display:flex}
+  .navlinks{gap:10px}
+  .nav .btn.nav-donate{display:none}
+  .mobile-cta{display:block;background:var(--navy-800);border-top:1px solid var(--hair-d)}
+  .mobile-cta .wrap{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;padding-top:10px;padding-bottom:10px}
+  .mobile-cta .btn{font-size:15px;padding:12px 6px 10px}
+  .cards-3,.photos .grid{grid-template-columns:1fr}
+  .split,.donatepanel{grid-template-columns:1fr;gap:32px}
+  .featured{grid-template-columns:1fr}
+  .portrait{min-height:230px;border-right:0;border-bottom:1px solid var(--hair-d)}
+  .featured .body{padding:30px 26px 32px}
+  .localbar{flex-direction:column;align-items:flex-start;padding:28px 24px}
+  .localbar .btn{width:100%}
+}
+@media (max-width:640px){
+  :root{--pad:18px}
+  body{font-size:16px}
+  section{padding:52px 0}
+  .tight{padding:44px 0}
+  .topline{font-size:11px;letter-spacing:.13em;padding:8px 12px 6px}
+  .servicebar .grid{grid-template-columns:repeat(2,1fr)}
+  .servicebar .svc:last-child{grid-column:1 / -1}
+  .svc{padding:22px 12px 20px}
+  .guards,.wall{grid-template-columns:repeat(2,1fr)}
+  .footgrid{grid-template-columns:1fr;gap:30px}
+  .frow{grid-template-columns:1fr;gap:0}
+  .frow .field{margin-bottom:14px}
+  .hero{padding-top:44px}
+  .hero-inner{padding-bottom:54px}
+  .hero .btn-row{display:grid;grid-template-columns:1fr;gap:10px}
+  .hero .btn{width:100%}
+  .card,.guard{padding:26px 22px}
+  .arg-body{padding:26px 20px 30px}
+  .formcard{padding:26px 20px 28px}
+  .featured blockquote{font-size:clamp(24px,7.4vw,34px)}
+  .donatebox .amt{grid-template-columns:repeat(2,1fr)}
+  .btn{font-size:16.5px;padding:15px 20px 13px}
+}
+@media (max-width:380px){
+  :root{--pad:15px}
+  /* the sticky Endorse/Donate/Share bar below already carries these */
+  .nav .navlinks{display:none}
+  .brandtext strong{font-size:20px}
+  .brandmark{width:40px;height:40px;font-size:27px}
+  .servicebar .grid{grid-template-columns:1fr}
+  .wall{grid-template-columns:1fr}
+  .guards{grid-template-columns:1fr}
+  .mobile-cta .btn{font-size:13.5px;letter-spacing:.04em;padding:12px 2px 10px}
+  .btn-row .btn{width:100%}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *{transition:none !important;animation:none !important}
+}
+</style>
+</head>
+<body>
+
+<div class="topline">Election Day <b>November 3, 2026</b> &nbsp;•&nbsp; Sutter County &nbsp;•&nbsp; Vote <b>Yes on G</b></div>
+
+<!-- ============================ NAV ============================ -->
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Yes on Measure G — home">
+      <div class="brandmark" aria-hidden="true">G</div>
+      <div class="brandtext">
+        <strong>Yes on G</strong>
+        <small>Safe Sutter County</small>
+      </div>
+    </a>
+    <nav class="navlinks" aria-label="Primary">
+      <a class="lnk" href="#why">Why G</a>
+      <a class="lnk" href="#accountability">Accountability</a>
+      <a class="lnk" href="#endorsers">Endorsers</a>
+      <a class="lnk" href="#argument">Ballot Argument</a>
+      <a class="btn btn-ghost" href="#endorse">Endorse</a>
+      <a class="btn btn-gold nav-donate" href="#donate">Donate</a>
+    </nav>
+  </div>
+</header>
+<div class="mobile-cta">
+  <div class="wrap">
+    <a class="btn btn-gold" href="#endorse">Endorse</a>
+    <a class="btn btn-cobalt" href="#donate">Donate</a>
+    <button class="btn btn-ghost" type="button" data-share>Share</button>
+  </div>
+</div>
+
+<main id="top">
+
+  <!-- ============================ HERO ============================ -->
+  <section class="hero">
+    <div class="bg" aria-hidden="true">
+      <!-- Placeholder texture only. Replace with campaign-owned hero photography when available. -->
+      <img src="assets/img/water-tower-dusk.jpg" alt="" />
+    </div>
+    <div class="grad" aria-hidden="true"></div>
+    <div class="rules" aria-hidden="true"></div>
+    <div class="wrap">
+      <div class="hero-inner">
+        <span class="kicker">Sutter County Safety &amp; Water Protection Measure</span>
+        <h1>Protect the services that<br />protect <span class="hl">Sutter County.</span></h1>
+        <p class="lead">Measure G is a locally controlled one-cent sales tax that helps protect fire and 911 emergency response, sheriff and police patrols, reliable drinking water, road repairs and other essential local services.</p>
+        <div class="pills">
+          <span class="pill">Local Control</span>
+          <span class="pill">Independent Audits</span>
+          <span class="pill">Citizens' Oversight</span>
+          <span class="pill">Public Reporting</span>
+        </div>
+        <div class="btn-row">
+          <a class="btn btn-gold" href="#endorse">Endorse Measure G</a>
+          <a class="btn btn-ghost" href="#donate">Donate</a>
+          <button class="btn btn-ghost" type="button" data-share>Share</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ SERVICE BAR ============================ -->
+  <section class="servicebar" style="padding:0" aria-label="What Measure G protects">
+    <div class="wrap" style="padding:0;max-width:none">
+      <div class="grid">
+        <div class="svc">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2s4.5 4.2 4.5 8.2a4.5 4.5 0 0 1-9 0C7.5 8.6 9 7 9 7s.6 1.9 1.8 2.5C11.2 7.4 12 5 12 2Z"/><path d="M6.5 13.5C5.6 15 5 16.6 5 18a7 7 0 0 0 14 0c0-1.4-.6-3-1.5-4.5"/></svg>
+          <b>Fire &amp; 911</b><span>Emergency medical response, stations open</span>
+        </div>
+        <div class="svc">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2.5 4 6v6c0 5 3.4 8.5 8 9.5 4.6-1 8-4.5 8-9.5V6l-8-3.5Z"/><path d="m12 8 1.3 2.7 2.9.4-2.1 2 .5 2.9-2.6-1.4-2.6 1.4.5-2.9-2.1-2 2.9-.4L12 8Z"/></svg>
+          <b>Sheriff &amp; Police</b><span>Patrols across the county</span>
+        </div>
+        <div class="svc">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2.7s6.2 6.6 6.2 11a6.2 6.2 0 1 1-12.4 0c0-4.4 6.2-11 6.2-11Z"/><path d="M9.2 14.6a2.9 2.9 0 0 0 2.9 2.9"/></svg>
+          <b>Drinking Water</b><span>Adequate, reliable supply</span>
+        </div>
+        <div class="svc">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6.5 21 9 3h6l2.5 18"/><path d="M12 5v2.5M12 11v2.5M12 17v2.5"/></svg>
+          <b>Road Repairs</b><span>Streets we all drive every day</span>
+        </div>
+        <div class="svc">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18"/><path d="M5 21V9.5L12 4l7 5.5V21"/><path d="M10 21v-5h4v5"/></svg>
+          <b>Essential Services</b><span>The basics communities depend on</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ WHY MEASURE G ============================ -->
+  <section class="why" id="why">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Why Measure G</div>
+        <h2>Some things are too important<br />to let slip away.</h2>
+        <p class="lead">When a fire breaks out, a family calls 911, a deputy is needed, or a community needs safe, reliable water, being prepared matters. Measure G is about protecting the fundamentals Sutter County residents already depend on.</p>
+      </div>
+      <div class="cards-3">
+        <article class="card">
+          <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2s4.5 4.2 4.5 8.2a4.5 4.5 0 0 1-9 0C7.5 8.6 9 7 9 7s.6 1.9 1.8 2.5C11.2 7.4 12 5 12 2Z"/><path d="M6.5 13.5C5.6 15 5 16.6 5 18a7 7 0 0 0 14 0c0-1.4-.6-3-1.5-4.5"/></svg>
+          <h3>Protect Emergency Response</h3>
+          <p>Help keep local fire stations open and maintain firefighters, paramedics and 911 emergency response when minutes matter.</p>
+        </article>
+        <article class="card">
+          <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2.5 4 6v6c0 5 3.4 8.5 8 9.5 4.6-1 8-4.5 8-9.5V6l-8-3.5Z"/><path d="m12 8 1.3 2.7 2.9.4-2.1 2 .5 2.9-2.6-1.4-2.6 1.4.5-2.9-2.1-2 2.9-.4L12 8Z"/></svg>
+          <h3>Protect Public Safety</h3>
+          <p>Support sheriff and police patrols and the local public-safety resources needed to serve communities across Sutter County.</p>
+        </article>
+        <article class="card">
+          <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2.7s6.2 6.6 6.2 11a6.2 6.2 0 1 1-12.4 0c0-4.4 6.2-11 6.2-11Z"/><path d="M9.2 14.6a2.9 2.9 0 0 0 2.9 2.9"/></svg>
+          <h3>Protect Reliable Water</h3>
+          <p>Help ensure adequate, reliable drinking-water supplies and protect the basic infrastructure local communities need.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ PHOTO STRIP ============================
+       IMAGE SLOTS. Current photos are low-resolution third-party reference
+       images under a duotone wash — rights are NOT cleared for launch.
+       Swap each <img> for campaign-owned photography before going live.
+       ================================================================= -->
+  <section class="photos tight" aria-label="Sutter County">
+    <div class="wrap">
+      <div class="grid">
+        <figure class="photo-card">
+          <div class="duo"><img src="assets/img/fire-badge.jpg" alt="Sutter County Fire Department badge on an engine" loading="lazy" /></div>
+          <figcaption class="label"><b>Fire &amp; 911</b>"When seconds matter, local emergency response matters."</figcaption>
+        </figure>
+        <figure class="photo-card">
+          <div class="duo"><img src="assets/img/water-tower-yuba.jpg" alt="The Yuba City water tower" loading="lazy" /></div>
+          <figcaption class="label"><b>Water</b>"Reliable water protects families, farms and our local economy."</figcaption>
+        </figure>
+        <figure class="photo-card">
+          <div class="duo"><img src="assets/img/sheriff-office.jpg" alt="The Sutter County Sheriff's Office" loading="lazy" /></div>
+          <figcaption class="label"><b>Public Safety</b>"Protect the basic services we rely on every day."</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ WHAT'S AT STAKE ============================ -->
+  <section class="stakes on-dark" id="stakes">
+    <div class="wrap">
+      <div class="split">
+        <div>
+          <div class="eyebrow on-dark">What's at Stake</div>
+          <h2>This is not about expanding government.</h2>
+          <p class="lead">It is about preventing the loss of services Sutter County residents already rely on. Rising costs, aging infrastructure and growing demands are putting real pressure on public safety and water systems.</p>
+          <div class="stamp">Every dollar stays local.<br /><em>Sacramento politicians can't touch it.</em></div>
+        </div>
+        <div class="panel">
+          <h3>Without stable local funding, the risks include:</h3>
+          <ul class="risklist">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg><span>Fewer resources for fire, 911 and emergency response</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg><span>Less sheriff and police coverage</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg><span>Greater pressure on local water systems and infrastructure</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg><span>More deterioration of local roads</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg><span>Cuts or reductions to other basic local services</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ ACCOUNTABILITY ============================ -->
+  <section class="accountability" id="accountability">
+    <div class="wrap">
+      <div class="section-head centered">
+        <div class="seal" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5 4 6v6c0 5 3.4 8.5 8 9.5 4.6-1 8-4.5 8-9.5V6l-8-3.5Z"/><path d="m8.6 12.2 2.3 2.3 4.5-4.6"/></svg>
+        </div>
+        <div class="eyebrow centered">Taxpayer Protections</div>
+        <h2>Measure G stays local —<br />with safeguards written in.</h2>
+        <p class="lead">Measure G was developed by Sutter County, Yuba City and Live Oak as a local funding source. The ballot measure calls for independent audits, citizens' oversight and public disclosure.</p>
+      </div>
+      <div class="guards">
+        <div class="guard">
+          <span class="n">01</span>
+          <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s7-6.3 7-11a7 7 0 1 0-14 0c0 4.7 7 11 7 11Z"/><circle cx="12" cy="10" r="2.6"/></svg>
+          <h3>Stays Local</h3>
+          <p>Measure G revenue is local funding that the State cannot take away.</p>
+        </div>
+        <div class="guard">
+          <span class="n">02</span>
+          <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8l-5-5Z"/><path d="M14 3v5h5"/><path d="m9 14.5 2 2 4-4"/></svg>
+          <h3>Independent Audits</h3>
+          <p>Independent auditing provides a public check on how the funds are handled.</p>
+        </div>
+        <div class="guard">
+          <span class="n">03</span>
+          <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.2"/><path d="M2.8 20c0-3.4 2.8-5.6 6.2-5.6s6.2 2.2 6.2 5.6"/><path d="M17 5.4a3.2 3.2 0 0 1 0 5.9M18.6 14.9c1.7.8 2.8 2.4 2.8 5.1"/></svg>
+          <h3>Citizens' Oversight</h3>
+          <p>A Citizens' Oversight Committee is built into the accountability framework.</p>
+        </div>
+        <div class="guard">
+          <span class="n">04</span>
+          <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H18a2 2 0 0 1 2 2v13.5a2.5 2.5 0 0 1-2.5 2.5H6.5A2.5 2.5 0 0 1 4 18.5v-13Z"/><path d="M8 8h8M8 12h8M8 16h5"/></svg>
+          <h3>Public Reporting</h3>
+          <p>Residents can review how funds are spent and hold local government accountable.</p>
+        </div>
+      </div>
+      <div class="localbar">
+        <div class="txt">
+          <b>Local money. Local control. <em>Sutter taking care of Sutter.</em></b>
+          <span>Taxpayer skepticism is reasonable. That is exactly why Measure G should be judged by what we stand to lose without it — and by whether the safeguards are strong enough to protect taxpayers.</span>
+        </div>
+        <a class="btn btn-gold" href="#argument">Read the Safeguards</a>
+      </div>
+      <p class="official">Official measure information: <a href="https://www.sutter.gov/government/county-departments/clerk-recorder/elections" target="_blank" rel="noopener">Sutter County Elections</a>.</p>
+    </div>
+  </section>
+
+  <!-- ============================ ENDORSEMENT WALL ============================ -->
+  <section class="endorsers" id="endorsers">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Community Support</div>
+        <h2>Join your Sutter County neighbors.</h2>
+        <p class="lead">Measure G is supported by the people who answer the calls, work the land, run the shops and raise their families here.</p>
+      </div>
+
+      <!-- FEATURED ENDORSER — quote confirmed; photo pending campaign approval. -->
+      <div class="featured">
+        <div class="portrait" aria-label="Photo of Sheriff Brandon Barnes — pending">
+          <!-- PHOTO SLOT: replace this whole block with
+               <img src="assets/img/barnes.jpg" alt="Sheriff Brandon Barnes" style="width:100%;height:100%;object-fit:cover"> -->
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8.5" r="4"/><path d="M4 21c0-4.2 3.6-7 8-7s8 2.8 8 7"/></svg>
+          <span>Campaign photo<br />to be supplied</span>
+        </div>
+        <div class="body">
+          <div class="eyebrow on-dark">Featured Endorser</div>
+          <blockquote>"Local money. Local control. <em>Sutter taking care of Sutter."</em></blockquote>
+          <div class="who">
+            <strong>Sheriff Brandon Barnes</strong>
+            <span>Sutter County Sheriff</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- PLACEHOLDER WALL — designed to grow to 100+. Replace each .slot with a
+           real endorser card as names are confirmed (name, title/org, city). -->
+      <div class="wall">
+        <div class="slot"><strong>Firefighter</strong><span>Your name here</span></div>
+        <div class="slot"><strong>Deputy Sheriff</strong><span>Your name here</span></div>
+        <div class="slot"><strong>Local Farmer</strong><span>Your name here</span></div>
+        <div class="slot"><strong>Small Business Owner</strong><span>Your name here</span></div>
+        <div class="slot"><strong>Nurse</strong><span>Your name here</span></div>
+        <div class="slot"><strong>Teacher</strong><span>Your name here</span></div>
+        <div class="slot"><strong>Taxpayer Advocate</strong><span>Your name here</span></div>
+        <div class="slot"><strong>Neighbor</strong><span>Yuba City &middot; Live Oak</span></div>
+      </div>
+
+      <div class="wall-note">
+        <div class="counter"><b>100+</b><span>Neighbors &amp; counting</span></div>
+        <div class="btn-row centered">
+          <a class="btn btn-navy" href="#endorse">Add Your Name</a>
+          <a class="btn btn-outline" href="#donate">Donate</a>
+          <button class="btn btn-outline" type="button" data-share>Share</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ BALLOT ARGUMENT ============================ -->
+  <section class="argument" id="argument">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">The Case for Measure G</div>
+        <h2>Official Argument in Favor</h2>
+        <p class="lead">The complete argument, exactly as voters will read it — kept collapsed so the page stays simple.</p>
+      </div>
+      <details class="arg">
+        <summary>
+          <span class="txt">Read the Argument in Favor of Measure G</span>
+          <span class="chev" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></span>
+        </summary>
+        <div class="arg-body">
+          <div class="pending">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9.2"/><path d="M12 7.6v5.2M12 16.4h.01"/></svg>
+            <span>Final text pending — this will match the filed argument word-for-word.</span>
+          </div>
+          <p>When a fire breaks out, a family calls 911, or our community needs safe, reliable drinking water, there is no substitute for being prepared.</p>
+          <p><strong>Measure G protects the basic local services Sutter County residents depend on every day:</strong></p>
+          <ul>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><span>Fire and 911 Emergency Medical Response</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><span>Keeping Local Fire Stations Open</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><span>Sheriffs and Police Patrols</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><span>Clean and Adequate Drinking Water Supplies</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><span>Road Repairs</span></li>
+          </ul>
+          <p><strong>This is not about expanding government. It is about preventing the loss of services we already rely on.</strong></p>
+          <p>Rising costs, aging infrastructure and growing demands are putting increasing pressure on public safety and water systems. Without a stable local source of funding, the risk is simple:</p>
+          <ul>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><span>Fewer Resources for Emergency Response</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><span>Deteriorating Roads</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><span>Struggles to maintain the services that protect our families, homes and businesses.</span></li>
+          </ul>
+          <p>Measure G provides a locally controlled source of funding for vital services. Every dollar stays local. Sacramento politicians can't touch it.</p>
+          <p><strong>Measure G includes strong taxpayer protections:</strong></p>
+          <ul>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><span>Independent audits</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><span>A Citizens' Oversight Committee</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><span>Public review and disclosure are required</span></li>
+          </ul>
+          <p>We all will be able to see how funds are spent and hold local government accountable.</p>
+          <p>Taxpayer skepticism is reasonable. That is exactly why Measure G should be judged by what we stand to lose without it — and by whether the safeguards are strong enough to protect taxpayers.</p>
+          <p>Keeping firefighters, paramedics and law enforcement available when emergencies happen is not optional. Neither is ensuring reliable drinking water or maintaining the roads we all use.</p>
+          <p>Measure G is a local solution to local needs, with local accountability. Before service reductions and infrastructure problems become costly emergencies, we should protect the fundamentals.</p>
+          <p>Please join your neighbors, Fire Fighters, Deputy Sheriffs, small business owners, farmers, nurses, taxpayer advocates and us in voting <strong>YES on Measure G.</strong></p>
+          <p class="closer">Protect the services that protect Sutter County.</p>
+        </div>
+      </details>
+    </div>
+  </section>
+
+  <!-- ============================ ENDORSE FORM ============================ -->
+  <section class="endorse on-dark" id="endorse">
+    <div class="wrap">
+      <div class="split">
+        <div>
+          <div class="eyebrow on-dark">Endorse Measure G</div>
+          <h2>Add your name.</h2>
+          <p class="lead">Public endorsements create visible community support. It takes thirty seconds, and your name joins neighbors from Yuba City, Live Oak and across the county.</p>
+          <ul class="asklist">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><span>We'll ask whether we may list your name, title and city publicly.</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><span>A photo and one sentence about why you support G are welcome, never required.</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><span>Your contact information stays with the campaign. We don't sell or share it.</span></li>
+          </ul>
+        </div>
+
+        <div class="formcard">
+          <!-- BACKEND HOOK ------------------------------------------------------
+               This form is intentionally NOT wired to a handler yet — the campaign
+               has not supplied a destination. To connect it:
+                 1. Set action="<handler URL>" and method="post" on <form>, e.g. a
+                    Formspree / Netlify Forms / Google Form / NationBuilder endpoint.
+                 2. Delete the onsubmit handler below (or keep it and POST via fetch
+                    inside handleEndorse() for the inline thank-you experience).
+               Field names are already set: name, city, email, phone, title, why, consent.
+          -------------------------------------------------------------------- -->
+          <form id="endorseForm" novalidate>
+            <h3>Endorsement Form</h3>
+            <p class="small">Fields marked * are required.</p>
+            <div class="frow">
+              <div class="field">
+                <label for="f-name">Name *</label>
+                <input id="f-name" name="name" autocomplete="name" required />
+              </div>
+              <div class="field">
+                <label for="f-city">City / Community *</label>
+                <input id="f-city" name="city" placeholder="Yuba City, Live Oak…" autocomplete="address-level2" required />
+              </div>
+            </div>
+            <div class="frow">
+              <div class="field">
+                <label for="f-email">Email *</label>
+                <input id="f-email" name="email" type="email" autocomplete="email" required />
+              </div>
+              <div class="field">
+                <label for="f-phone">Phone</label>
+                <input id="f-phone" name="phone" type="tel" autocomplete="tel" />
+              </div>
+            </div>
+            <div class="field">
+              <label for="f-title">Title / Organization</label>
+              <input id="f-title" name="title" placeholder="For public identification, if desired" />
+            </div>
+            <div class="field">
+              <label for="f-why">Why I support Measure G</label>
+              <textarea id="f-why" name="why" placeholder="One sentence is perfect."></textarea>
+            </div>
+            <label class="consent" for="f-consent">
+              <input type="checkbox" id="f-consent" name="consent" required />
+              <span>I endorse Measure G and give the campaign permission to contact me about publicly listing my endorsement. *</span>
+            </label>
+            <button class="btn btn-cobalt btn-block" type="submit">Submit My Endorsement</button>
+          </form>
+
+          <div class="thanks" id="thanks" role="status" aria-live="polite">
+            <div class="tick" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></div>
+            <h3>Thank you, neighbor.</h3>
+            <p>Your endorsement has been recorded. Someone from the campaign will follow up about listing your name on the endorsement wall.</p>
+            <p class="small" style="margin-top:14px">Setup note for the campaign: this form is not yet connected to a submission handler, so nothing was sent. Send us the destination address and we'll wire it up.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ DONATE ============================ -->
+  <section class="donate" id="donate">
+    <div class="wrap">
+      <div class="donatepanel">
+        <div>
+          <div class="eyebrow">Help Win Measure G</div>
+          <h2>Help us reach every Sutter County voter.</h2>
+          <p class="lead">Campaigns run on yard signs, mail, digital ads and door-to-door conversations. Your contribution pays for talking to local voters before ballots are returned.</p>
+        </div>
+        <div class="donatebox">
+          <p class="amt-label">Suggested contribution</p>
+          <div class="amt" aria-hidden="true"><span>$25</span><span>$50</span><span>$100</span><span>$250</span></div>
+          <!-- DONATE HOOK: replace href with the committee's compliant processor URL
+               (Anedot / ActBlue-equivalent / WinRed-equivalent) and delete the .soon block. -->
+          <a class="btn btn-gold btn-block" href="#donate" aria-describedby="donate-soon">Donate to Yes on G</a>
+          <div class="soon" id="donate-soon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9.2"/><path d="M12 7.4v5l3 1.8"/></svg>
+            <p><b>Online donations opening soon.</b>Contributions by mail can be sent to the committee treasurer — mailing address to be posted here. Contributions to a California ballot measure committee are not tax-deductible.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ SHARE ============================ -->
+  <section class="share" id="share">
+    <div class="wrap">
+      <div class="split">
+        <div>
+          <div class="eyebrow">Spread the Word</div>
+          <h2>One share can reach<br />a whole neighborhood.</h2>
+          <p class="lead">Most voters hear about a local measure from someone they know. Copy the message below, send it to five neighbors, and you've done more than any mailer.</p>
+          <div class="btn-row" style="margin-top:26px">
+            <a class="btn btn-navy" href="#endorse">Endorse</a>
+            <a class="btn btn-outline" href="#donate">Donate</a>
+          </div>
+        </div>
+        <div class="sharebox">
+          <h3>Suggested Share Message</h3>
+          <p class="sharecopy" id="shareText">I'm voting YES on Measure G to protect Sutter County fire and 911 response, sheriff and police patrols, reliable drinking water, roads and essential local services — with local control, audits and citizens' oversight. Join me: Vote YES on G.</p>
+          <div class="btn-row">
+            <button class="btn btn-cobalt" type="button" id="copyBtn">Copy Message</button>
+            <button class="btn btn-outline" type="button" data-share>Share Website</button>
+          </div>
+          <p class="small" id="copyStatus" aria-live="polite"></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ ELECTION DAY ============================ -->
+  <section class="finalcta">
+    <div class="wrap">
+      <div class="datebadge"><b>Nov 3, 2026</b><span>Election Day</span></div>
+      <h2>Vote Yes on G.</h2>
+      <p class="lead">Protect fire and 911 response. Protect public safety. Protect reliable water. Protect the services that protect Sutter County.</p>
+      <div class="btn-row centered">
+        <a class="btn btn-gold" href="#endorse">Endorse</a>
+        <a class="btn btn-ghost" href="#donate">Donate</a>
+        <button class="btn btn-ghost" type="button" data-share>Share</button>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ============================ FOOTER ============================ -->
+<footer>
+  <div class="wrap">
+    <div class="footgrid">
+      <div>
+        <div class="brand">
+          <div class="brandmark" aria-hidden="true">G</div>
+          <div class="brandtext">
+            <strong>Yes on G</strong>
+            <small>Neighbors for a Safe Sutter County</small>
+          </div>
+        </div>
+        <p class="footnote">Campaign website supporting Sutter County Measure G on the November 3, 2026 ballot. This website is paid political communication and is separate from official Sutter County government information.</p>
+      </div>
+      <div>
+        <h4>The Campaign</h4>
+        <ul>
+          <li><a href="#why">Why Measure G</a></li>
+          <li><a href="#accountability">Accountability</a></li>
+          <li><a href="#endorsers">Endorsers</a></li>
+          <li><a href="#argument">Ballot Argument</a></li>
+          <li><a href="#endorse">Endorse</a></li>
+          <li><a href="#donate">Donate</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Connect</h4>
+        <!-- SOCIAL LINKS: hrefs are TBD — campaign accounts not supplied yet. -->
+        <div class="socials">
+          <a href="#" aria-label="Facebook (link to be supplied)" title="Facebook — link TBD"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0 0 22 12Z"/></svg></a>
+          <a href="#" aria-label="Instagram (link to be supplied)" title="Instagram — link TBD"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor" stroke="none"/></svg></a>
+          <a href="#" aria-label="YouTube (link to be supplied)" title="YouTube — link TBD"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.6 7.2a2.5 2.5 0 0 0-1.8-1.8C18.2 5 12 5 12 5s-6.2 0-7.8.4A2.5 2.5 0 0 0 2.4 7.2 26 26 0 0 0 2 12a26 26 0 0 0 .4 4.8 2.5 2.5 0 0 0 1.8 1.8C5.8 19 12 19 12 19s6.2 0 7.8-.4a2.5 2.5 0 0 0 1.8-1.8A26 26 0 0 0 22 12a26 26 0 0 0-.4-4.8ZM10 15V9l5.2 3L10 15Z"/></svg></a>
+        </div>
+        <ul style="margin-top:18px">
+          <li><a href="https://www.sutter.gov/government/county-departments/clerk-recorder/elections" target="_blank" rel="noopener">Official Sutter County election information</a></li>
+          <li><a href="#endorse">Contact the campaign</a></li>
+        </ul>
+      </div>
+    </div>
+    <!-- FPPC DISCLOSURE — required by law. The bracketed text must be replaced with
+         the committee's exact registered name and FPPC ID before this site goes live. -->
+    <p class="disclosure">
+      Paid for by Yes on Measure G<br />
+      <span class="fppc">[Exact FPPC committee name &amp; ID number pending]</span>
+    </p>
+    <p class="colophon">&copy; 2026 Yes on Measure G. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  'use strict';
+
+  /* --- nav shadow on scroll --- */
+  var nav = document.getElementById('nav');
+  var onScroll = function () {
+    nav.classList.toggle('scrolled', window.scrollY > 12);
+  };
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  /* --- share: native sheet where available, clipboard fallback --- */
+  var SHARE_TITLE = 'Yes on Measure G — Sutter County';
+  var shareText = document.getElementById('shareText');
+  var status = document.getElementById('copyStatus');
+
+  function say(msg) {
+    if (!status) return;
+    status.textContent = msg;
+    window.clearTimeout(say._t);
+    say._t = window.setTimeout(function () { status.textContent = ''; }, 4000);
+  }
+
+  function copy(text) {
+    if (navigator.clipboard && window.isSecureContext) {
+      return navigator.clipboard.writeText(text);
+    }
+    return new Promise(function (resolve, reject) {
+      var ta = document.createElement('textarea');
+      ta.value = text;
+      ta.setAttribute('readonly', '');
+      ta.style.cssText = 'position:absolute;left:-9999px';
+      document.body.appendChild(ta);
+      ta.select();
+      try { document.execCommand('copy') ? resolve() : reject(); }
+      catch (e) { reject(e); }
+      finally { document.body.removeChild(ta); }
+    });
+  }
+
+  Array.prototype.forEach.call(document.querySelectorAll('[data-share]'), function (btn) {
+    btn.addEventListener('click', function () {
+      var payload = {
+        title: SHARE_TITLE,
+        text: shareText ? shareText.textContent.trim() : SHARE_TITLE,
+        url: window.location.href
+      };
+      if (navigator.share) {
+        navigator.share(payload).catch(function () { /* user dismissed */ });
+        return;
+      }
+      copy(payload.text + ' ' + payload.url).then(function () {
+        say('Link and message copied — paste it anywhere.');
+        document.getElementById('share').scrollIntoView({ block: 'center' });
+      }).catch(function () {
+        say('Copy did not work on this browser — select the message above and copy it.');
+      });
+    });
+  });
+
+  var copyBtn = document.getElementById('copyBtn');
+  if (copyBtn) {
+    copyBtn.addEventListener('click', function () {
+      copy(shareText.textContent.trim()).then(function () {
+        say('Message copied.');
+      }).catch(function () {
+        say('Copy did not work on this browser — select the message above and copy it.');
+      });
+    });
+  }
+
+  /* --- endorsement form: inline thank-you (no backend wired yet) --- */
+  var form = document.getElementById('endorseForm');
+  var thanks = document.getElementById('thanks');
+  if (form && thanks) {
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      if (!form.reportValidity()) return;
+      // BACKEND HOOK: POST the FormData here once the campaign supplies a handler.
+      // var data = new FormData(form);
+      // fetch(HANDLER_URL, { method: 'POST', body: data });
+      form.style.display = 'none';
+      thanks.classList.add('show');
+      thanks.scrollIntoView({ block: 'center', behavior: 'smooth' });
+    });
+  }
+})();
+</script>
+</body>
+</html>
