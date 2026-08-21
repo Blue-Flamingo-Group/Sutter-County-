@@ -545,6 +545,13 @@ footer ul{list-style:none;display:flex;flex-direction:column;gap:9px}
   .featured blockquote{font-size:clamp(24px,7.4vw,34px)}
   .donatebox .amt{grid-template-columns:repeat(2,1fr)}
   .btn{font-size:16.5px;padding:15px 20px 13px}
+  /* Display headings: drop the desktop-only hard breaks and let the browser
+     even out the lines instead of leaving orphaned words. */
+  br.brk{display:none}
+  h1,h2{text-wrap:balance}
+  /* Keep the gold-highlighted phrase together so it reads as one block. */
+  .hero h1 .hl{display:inline-block}
+  .hero .kicker{font-size:12.5px;letter-spacing:.13em;text-align:center;text-wrap:balance}
 }
 @media (max-width:380px){
   :root{--pad:15px}
@@ -609,7 +616,7 @@ footer ul{list-style:none;display:flex;flex-direction:column;gap:9px}
     <div class="wrap">
       <div class="hero-inner">
         <span class="kicker">Sutter County Safety &amp; Water Protection Measure</span>
-        <h1>Protect the services that<br />protect <span class="hl">Sutter County.</span></h1>
+        <h1>Protect the services that <br class="brk" />protect <span class="hl">Sutter County.</span></h1>
         <p class="lead">Measure G is a locally controlled one-cent sales tax that helps protect fire and 911 emergency response, sheriff and police patrols, reliable drinking water, road repairs and other essential local services.</p>
         <div class="pills">
           <span class="pill">Local Control</span>
@@ -659,7 +666,7 @@ footer ul{list-style:none;display:flex;flex-direction:column;gap:9px}
     <div class="wrap">
       <div class="section-head">
         <div class="eyebrow">Why Measure G</div>
-        <h2>Some things are too important<br />to let slip away.</h2>
+        <h2>Some things are too important <br class="brk" />to let slip away.</h2>
         <p class="lead">When a fire breaks out, a family calls 911, a deputy is needed, or a community needs safe, reliable water, being prepared matters. Measure G is about protecting the fundamentals Sutter County residents already depend on.</p>
       </div>
       <div class="cards-3">
@@ -691,15 +698,15 @@ footer ul{list-style:none;display:flex;flex-direction:column;gap:9px}
     <div class="wrap">
       <div class="grid">
         <figure class="photo-card">
-          <div class="duo"><img src="assets/img/fire-badge.jpg" alt="Sutter County Fire Department badge on an engine" loading="lazy" /></div>
+          <div class="duo"><img src="assets/img/fire-badge.jpg" alt="Sutter County Fire Department badge on an engine" loading="lazy" style="object-position:50% 42%" /></div>
           <figcaption class="label"><b>Fire &amp; 911</b>"When seconds matter, local emergency response matters."</figcaption>
         </figure>
         <figure class="photo-card">
-          <div class="duo"><img src="assets/img/water-tower-yuba.jpg" alt="The Yuba City water tower" loading="lazy" /></div>
+          <div class="duo"><img src="assets/img/water-tower-yuba.jpg" alt="The Yuba City water tower" loading="lazy" style="object-position:50% 34%" /></div>
           <figcaption class="label"><b>Water</b>"Reliable water protects families, farms and our local economy."</figcaption>
         </figure>
         <figure class="photo-card">
-          <div class="duo"><img src="assets/img/sheriff-office.jpg" alt="The Sutter County Sheriff's Office" loading="lazy" /></div>
+          <div class="duo"><img src="assets/img/sheriff-office.jpg" alt="The Sutter County Sheriff's Office" loading="lazy" style="object-position:50% 30%" /></div>
           <figcaption class="label"><b>Public Safety</b>"Protect the basic services we rely on every day."</figcaption>
         </figure>
       </div>
@@ -738,7 +745,7 @@ footer ul{list-style:none;display:flex;flex-direction:column;gap:9px}
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5 4 6v6c0 5 3.4 8.5 8 9.5 4.6-1 8-4.5 8-9.5V6l-8-3.5Z"/><path d="m8.6 12.2 2.3 2.3 4.5-4.6"/></svg>
         </div>
         <div class="eyebrow centered">Taxpayer Protections</div>
-        <h2>Measure G stays local —<br />with safeguards written in.</h2>
+        <h2>Measure G stays local — <br class="brk" />with safeguards written in.</h2>
         <p class="lead">Measure G was developed by Sutter County, Yuba City and Live Oak as a local funding source. The ballot measure calls for independent audits, citizens' oversight and public disclosure.</p>
       </div>
       <div class="guards">
@@ -985,7 +992,7 @@ footer ul{list-style:none;display:flex;flex-direction:column;gap:9px}
       <div class="split">
         <div>
           <div class="eyebrow">Spread the Word</div>
-          <h2>One share can reach<br />a whole neighborhood.</h2>
+          <h2>One share can reach <br class="brk" />a whole neighborhood.</h2>
           <p class="lead">Most voters hear about a local measure from someone they know. Copy the message below, send it to five neighbors, and you've done more than any mailer.</p>
           <div class="btn-row" style="margin-top:26px">
             <a class="btn btn-navy" href="#endorse">Endorse</a>
