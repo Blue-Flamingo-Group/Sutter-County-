@@ -12,11 +12,13 @@ folder; that is the whole stack.
 
 ## Placeholders that must be resolved before launch
 Search `index.html` for these:
-1. **FPPC disclosure** (`class="disclosure"`) — exact registered committee name
-   and ID. Legally required. Only the committee can supply it.
-2. **Ballot argument** (`#argument`) — currently the prototype's text with a
-   visible "final text pending" note. Replace with the filed argument verbatim,
-   then delete the `.pending` block.
+1. **FPPC disclosure** (`class="disclosure"`) — committee name and street address
+   are in place. The **FPPC ID number has not been issued**; the line reads "FPPC
+   ID number pending." Search the source for `insert FPPC ID here when issued`.
+2. **Ballot argument** (`#argument`) — the *argument in favor* is still the
+   prototype's text with a visible "final text pending" note. Replace with the
+   filed argument verbatim, then delete the `.pending` block. The second
+   expandable, the **rebuttal**, is the real filed text and is final.
 3. **Endorsement form** (`#endorseForm`) — no handler wired. See the BACKEND HOOK
    comment above the form and in the script.
 4. **Donate** (`#donate`) — button shows an "opening soon" state. See the
@@ -31,6 +33,26 @@ Search `index.html` for these:
    Replace with campaign-owned photography before the site goes public.
 9. **`<meta name="robots" content="noindex, nofollow">`** — remove at launch
    (also drop the `X-Robots-Tag` header block in `vercel.json`).
+
+## Official logo
+Client-supplied lockup: `assets/img/logo-yes-on-g.png` (900px web version; master
+in `_originals/`). Its own colors are royal blue `#0047AB` and yellow `#FFE45E` —
+**the site palette was deliberately not changed to match**; the site's gold
+`#f3b539` has better contrast on navy.
+
+The logo is blue-on-transparent, so it only goes on light grounds. On the navy
+header it measures **2.05:1** contrast (fails WCAG at any size), so the header
+keeps the typographic "Yes on G" mark. On white it measures 8.44:1, which is why
+it sits in the endorsement form card and the share section.
+
+Reversed knockout variants for the navy header exist as **proposals only** —
+`_originals/logo-knockout-proposal-a-flat.png` and `-b-kept-blue-in-yellow.png`.
+They recolor a client brand asset, so they need committee approval and are **not
+deployed** (`_originals/` is in `.vercelignore`). Side-by-side comparison:
+`_verify/round3/PROPOSAL-header-knockout-logo-NOT-SHIPPED.png`.
+
+Favicon/touch icons are the logo's ballot-box mark cropped; `og-card.png` is the
+full logo centered on white at 1200x630.
 
 ## Type & color
 - Display: Big Shoulders Display (700/800/900) — condensed civic poster face.
