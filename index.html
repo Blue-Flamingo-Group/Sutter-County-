@@ -184,6 +184,30 @@ h2+.lead,h2+p{margin-top:18px}
   font-size:23px;letter-spacing:.02em;color:#fff;text-transform:uppercase;
 }
 .brandtext small{font-size:10px;letter-spacing:.19em;text-transform:uppercase;color:var(--cobalt-400);margin-top:5px;font-weight:600}
+
+/* Header brand lockup (round 5).  The check-box mark is NOT a trace: it is the
+   official logo's own pixels, cropped out of _originals/logo-yes-on-g.png by
+   _verify/round5/extract-mark.py, tail and all.  --ck is the size of the YELLOW
+   BOX; the swash overhangs the box up and to the right, so the image is placed
+   out of flow and the nav keeps its 70px height. */
+.brand-lockup{gap:20px;align-items:center}
+.ckwrap{--ck:42px;position:relative;flex:none;width:var(--ck);height:var(--ck)}
+.ckwrap img{
+  position:absolute;max-width:none;
+  left:calc(var(--ck) * -0.00341);
+  top:calc(var(--ck) * -0.29454);
+  width:calc(var(--ck) * 1.31950);
+  height:auto;
+}
+.brandtext-lk{display:flex;flex-direction:column;line-height:1}
+.brandtext-lk strong{
+  font-family:'Big Shoulders Display','Big Shoulders',sans-serif;font-weight:800;
+  font-size:27px;letter-spacing:.015em;color:#fff;text-transform:uppercase;white-space:nowrap;
+}
+.brandtext-lk small{
+  font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--gold-300);margin-top:5px;font-weight:700;white-space:nowrap;
+}
 .navlinks{display:flex;align-items:center;gap:26px}
 .navlinks a.lnk{font-size:14.5px;font-weight:600;color:#dbe6f0;position:relative;padding:4px 0}
 .navlinks a.lnk::after{content:"";position:absolute;left:0;bottom:0;height:2px;width:0;background:var(--gold);transition:width .2s ease}
@@ -605,6 +629,10 @@ footer ul{list-style:none;display:flex;flex-direction:column;gap:9px}
   /* Keep the gold-highlighted phrase together so it reads as one block. */
   .hero h1 .hl{display:inline-block}
   .hero .kicker{font-size:12.5px;letter-spacing:.13em;text-align:center;text-wrap:balance}
+  .brand-lockup{gap:17px}
+  .ckwrap{--ck:38px}
+  .brandtext-lk strong{font-size:21px}
+  .brandtext-lk small{font-size:8.5px;letter-spacing:.16em;margin-top:4px}
 }
 @media (max-width:380px){
   :root{--pad:15px}
@@ -631,12 +659,12 @@ footer ul{list-style:none;display:flex;flex-direction:column;gap:9px}
 <!-- ============================ NAV ============================ -->
 <header class="nav" id="nav">
   <div class="wrap">
-    <a class="brand" href="#top" aria-label="Yes on Measure G — home">
-      <div class="brandmark" aria-hidden="true">G</div>
-      <div class="brandtext">
-        <strong>Yes on G</strong>
+    <a class="brand brand-lockup" href="#top" aria-label="Yes on Measure G — home">
+      <span class="ckwrap" aria-hidden="true"><img src="assets/img/check-mark.png" alt="" width="222" height="218" /></span>
+      <span class="brandtext-lk">
+        <strong>Yes on Measure G</strong>
         <small>A Safe Sutter County</small>
-      </div>
+      </span>
     </a>
     <nav class="navlinks" aria-label="Primary">
       <a class="lnk" href="#why">Why G</a>

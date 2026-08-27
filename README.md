@@ -33,6 +33,14 @@ Search `index.html` for these:
    Replace with campaign-owned photography before the site goes public.
 9. **`<meta name="robots" content="noindex, nofollow">`** — remove at launch
    (also drop the `X-Robots-Tag` header block in `vercel.json`).
+10. **Header brand lockup** — the header now runs a **modified** lockup: the
+    official check-box mark (the logo's own pixels, not a redraw) set beside
+    re-typeset "YES ON MEASURE G / A SAFE SUTTER COUNTY" in Big Shoulders
+    Display. The mark is untouched; the *arrangement* is ours, because the
+    supplied logo is stacked and does not fit a 70px horizontal header.
+    **Needs a client OK before launch.** The ideal fix is a designer-made
+    horizontal lockup from the campaign's own designer — ask for one. Details
+    in "Official logo" below.
 
 ## Official logo
 Client-supplied lockup: `assets/img/logo-yes-on-g.png` (900px web version; master
@@ -41,9 +49,31 @@ in `_originals/`). Its own colors are royal blue `#0047AB` and yellow `#FFE45E` 
 `#f3b539` has better contrast on navy.
 
 The logo is blue-on-transparent, so it only goes on light grounds. On the navy
-header it measures **2.05:1** contrast (fails WCAG at any size), so the header
-keeps the typographic "Yes on G" mark. On white it measures 8.44:1, which is why
-it sits in the endorsement form card and the share section.
+header the blue wordmark measures **2.05:1** contrast (fails WCAG at any size).
+On white it measures 8.44:1, which is why the full logo sits in the endorsement
+form card and the share section.
+
+### Header lockup (modified — needs client approval)
+The header runs a horizontal lockup that does not exist in the supplied art:
+- **Mark** — `assets/img/check-mark.png`. This is the logo's *own artwork*,
+  cropped straight out of the master at `_originals/logo-yes-on-g.png`
+  (pixels 505,307–772,570), tail and all, then Lanczos-resampled to 4x the
+  header slot. Nothing is traced or redrawn. Reproduce with
+  `_verify/round5/extract-mark.py`; fidelity proof against the master at
+  identical scale is `_verify/round5/mark-fidelity.png` (0.23% mean channel
+  difference after whole-pixel realignment — resampling only).
+- **Type** — "YES ON MEASURE G" / "A SAFE SUTTER COUNTY" re-set in Big
+  Shoulders Display, white and gold, for contrast on navy.
+- **Geometry** — CSS `--ck` on `.ckwrap` sets the *yellow box* size (42px
+  desktop / 38px at ≤640). The check's swash overhangs the box up and to the
+  right, so the image is absolutely positioned out of flow; the nav stays 70px
+  tall at every width. The overhang ratios in the CSS come from the measured
+  sub-pixel box edges in the master and should not be hand-tweaked — re-run the
+  extraction script instead.
+
+Because the arrangement is ours, this is a **derivative** of a client brand
+asset and needs committee sign-off before launch. Ask the campaign's designer
+for a real horizontal lockup; drop it in and delete the `.brand-lockup` CSS.
 
 Reversed knockout variants for the navy header exist as **proposals only** —
 `_originals/logo-knockout-proposal-a-flat.png` and `-b-kept-blue-in-yellow.png`.
