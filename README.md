@@ -46,8 +46,15 @@ Search `index.html` for these:
 5. **Social links** (footer `.socials`) — all `href="#"`, marked TBD.
 6. **Featured endorser photo** (`.portrait`) — placeholder block with swap
    instructions inline. Quote from Sheriff Barnes is in place.
-7. **Endorsement wall** (`.wall`) — eight role-based "your name here" tiles,
-   designed to grow past 100 entries.
+7. **Endorsement wall** (`.wall`) — **TEMPORARILY REMOVED at client request
+   2026-08-31.** The eight role-based "your name here" tiles *and* the "100+
+   Neighbors & counting" badge (`.counter`) are commented out in `index.html`;
+   search for `RESTORE 2026-08-31`. The section still runs the featured
+   Sheriff Barnes block plus the Add Your Name / Donate / Share row. To bring
+   the wall back when real endorsers arrive, delete the four comment marker
+   lines wrapping those two blocks — the CSS was left in place untouched, so
+   uncommenting is the whole job. Then replace each `.slot` with a real
+   endorser card (name, title/org, city).
 8. **Photography** — the four images in `assets/img/` are low-resolution
    third-party reference photos under a duotone wash. **Rights are not cleared.**
    Replace with campaign-owned photography before the site goes public.

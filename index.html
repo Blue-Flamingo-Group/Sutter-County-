@@ -907,8 +907,28 @@ footer ul{list-style:none;display:flex;flex-direction:column;gap:9px}
         </div>
       </div>
 
-      <!-- PLACEHOLDER WALL — designed to grow to 100+. Replace each .slot with a
-           real endorser card as names are confirmed (name, title/org, city). -->
+      <!-- ==================================================================
+           TEMPORARILY REMOVED AT CLIENT REQUEST 2026-08-31
+           RESTORE WHEN REAL ENDORSERS ARRIVE.
+
+           Two things are commented out in this section, both marked
+           "RESTORE 2026-08-31" below:
+             (a) the eight role based placeholder tiles (.wall / .slot)
+             (b) the "100+ Neighbors and counting" badge (.counter)
+
+           To restore: delete the four comment marker lines that wrap those
+           two blocks. Nothing else changed. The supporting CSS
+           (.wall, .slot, .counter, and their breakpoint rules) was left in
+           place untouched, so uncommenting is the whole job.
+
+           Still live in this section: the featured Sheriff Barnes block
+           above, and the Add Your Name / Donate / Share row below.
+
+           ORIGINAL NOTE ON THE WALL: placeholder wall, designed to grow to
+           100+. Replace each .slot with a real endorser card as names are
+           confirmed (name, title/org, city).
+           ================================================================== -->
+      <!-- RESTORE 2026-08-31 (a) placeholder tiles: uncomment from here
       <div class="wall">
         <div class="slot"><strong>Firefighter</strong><span>Your name here</span></div>
         <div class="slot"><strong>Deputy Sheriff</strong><span>Your name here</span></div>
@@ -919,9 +939,12 @@ footer ul{list-style:none;display:flex;flex-direction:column;gap:9px}
         <div class="slot"><strong>Taxpayer Advocate</strong><span>Your name here</span></div>
         <div class="slot"><strong>Neighbor</strong><span>Yuba City &middot; Live Oak</span></div>
       </div>
+      to here -->
 
       <div class="wall-note">
+        <!-- RESTORE 2026-08-31 (b) count badge: uncomment from here
         <div class="counter"><b>100+</b><span>Neighbors &amp; counting</span></div>
+        to here -->
         <div class="btn-row centered">
           <a class="btn btn-navy" href="#endorse">Add Your Name</a>
           <a class="btn btn-outline" href="#donate">Donate</a>
