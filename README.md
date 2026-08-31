@@ -10,6 +10,26 @@ folder; that is the whole stack.
 - `_verify/` — Playwright screenshots (git-ignored).
 - `deploy.sh` — Vercel production deploy.
 
+## Launch status
+
+**LIVE — 2026-08-31.** The site is public at **https://safesutteryesong.com**.
+
+- **Domain / DNS — DONE 2026-08-31.** `safesutteryesong.com` at the registrar
+  (GoDaddy nameservers `ns63/ns64.domaincontrol.com`): apex `A` →
+  `76.76.21.21`, `www` `CNAME` → `cname.vercel-dns.com`. Both hostnames are
+  attached to the Vercel project `measure-g` (scope `syronius-projects`).
+  Let's Encrypt certs issued for both; `www` 308-redirects to the apex.
+- **Go-live flip — DONE 2026-08-31.** The `robots` noindex meta is removed from
+  `index.html` and the `X-Robots-Tag` header block is removed from
+  `vercel.json`. `canonical`, `og:url`, `og:image` and `twitter:image` now point
+  at `https://safesutteryesong.com`. **The site is indexable.**
+
+Because the site is now public, every unresolved item below is **live-visible**
+to voters and press. Still open at launch: the **FPPC ID** (reads "pending"),
+the **ballot argument** placeholder text, **uncleared third-party photography**,
+**client sign-off on the modified header lockup**, the **donation URL**, and the
+**endorsement form backend** (submissions currently go nowhere).
+
 ## Placeholders that must be resolved before launch
 Search `index.html` for these:
 1. **FPPC disclosure** (`class="disclosure"`) — committee name and street address
@@ -31,8 +51,9 @@ Search `index.html` for these:
 8. **Photography** — the four images in `assets/img/` are low-resolution
    third-party reference photos under a duotone wash. **Rights are not cleared.**
    Replace with campaign-owned photography before the site goes public.
-9. **`<meta name="robots" content="noindex, nofollow">`** — remove at launch
-   (also drop the `X-Robots-Tag` header block in `vercel.json`).
+9. ~~**`<meta name="robots" content="noindex, nofollow">`**~~ — **DONE
+   2026-08-31.** Meta removed from `index.html`; `X-Robots-Tag` header block
+   removed from `vercel.json`. The site is indexable.
 10. **Header brand lockup** — the header now runs a **modified** lockup: the
     official check-box mark (the logo's own pixels, not a redraw) set beside
     re-typeset "YES ON MEASURE G / A SAFE SUTTER COUNTY" in Big Shoulders
