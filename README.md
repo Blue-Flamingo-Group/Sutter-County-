@@ -25,24 +25,48 @@ folder; that is the whole stack.
   at `https://safesutteryesong.com`. **The site is indexable.**
 
 Because the site is now public, every unresolved item below is **live-visible**
-to voters and press. Still open at launch: the **FPPC ID** (reads "pending"),
-the **ballot argument** placeholder text, **uncleared third-party photography**,
-**client sign-off on the modified header lockup**, the **donation URL**, and the
-**endorsement form backend** (submissions currently go nowhere).
+to voters and press.
 
-## Placeholders that must be resolved before launch
+**Still open (as of round 8, 2026-09-01):**
+1. **Ballot argument** — the *argument in favor* is still prototype text.
+2. **Featured endorser photo + photography rights** — the Sheriff Barnes
+   portrait is a placeholder block, and the four `assets/img/` photos are
+   uncleared third-party reference images.
+3. **Client sign-off on the modified header lockup.**
+4. **Endorsement form backend** — submissions currently go nowhere.
+
+(Also still TBD but not blocking: the three footer social `href`s.)
+
+**Closed in round 8 (2026-09-01):** FPPC ID issued and in the disclosure;
+donations now run through email, so no processor URL is needed; the campaign
+contact address `Hello@safesutteryesong.com` is in the footer Connect column;
+section eyebrows and the header lockup were both scaled up.
+Evidence: `_verify/round8/`.
+
+## Placeholders
 Search `index.html` for these:
-1. **FPPC disclosure** (`class="disclosure"`) — committee name and street address
-   are in place. The **FPPC ID number has not been issued**; the line reads "FPPC
-   ID number pending." Search the source for `insert FPPC ID here when issued`.
+1. ~~**FPPC disclosure**~~ (`class="disclosure"`) — **DONE 2026-09-01.** The ID
+   was issued. The disclosure now reads, in the client's own wording verbatim,
+   "AD Paid for by Neighbors For A Safe Sutter County — Yes On Measure G ·
+   2057 Pheasant Drive, Yuba City, CA 95993 / **ID# 1494598**". The street
+   address was kept because it is part of the committee identification. Note the
+   `.disclosure` rule sets `text-transform:uppercase`, so the line renders in
+   caps regardless of the source casing — that predates this change.
 2. **Ballot argument** (`#argument`) — the *argument in favor* is still the
    prototype's text with a visible "final text pending" note. Replace with the
    filed argument verbatim, then delete the `.pending` block. The second
    expandable, the **rebuttal**, is the real filed text and is final.
 3. **Endorsement form** (`#endorseForm`) — no handler wired. See the BACKEND HOOK
    comment above the form and in the script.
-4. **Donate** (`#donate`) — button shows an "opening soon" state. See the
-   DONATE HOOK comment; swap the `href` for the processor URL and delete `.soon`.
+4. ~~**Donate**~~ (`#donate`) — **DONE 2026-09-01.** There is no online
+   processor; the committee takes contributions **by email at tom@pci.vote**.
+   The section's primary button is a `mailto:` with the subject "Measure G
+   donation", and the address is repeated below it as visible, selectable text
+   for phones with no mail client configured. The suggested-contribution chips
+   were kept (they tell the sender what amount to name) and the
+   not-tax-deductible line was kept. Nav, hero and CTA "Donate" buttons still
+   scroll to `#donate` — the context and the disclosure live there. If a
+   compliant processor is ever added, see the DONATION FLOW comment.
 5. **Social links** (footer `.socials`) — all `href="#"`, marked TBD.
 6. **Featured endorser photo** (`.portrait`) — placeholder block with swap
    instructions inline. Quote from Sheriff Barnes is in place.
@@ -92,10 +116,12 @@ The header runs a horizontal lockup that does not exist in the supplied art:
   difference after whole-pixel realignment — resampling only).
 - **Type** — "YES ON MEASURE G" / "A SAFE SUTTER COUNTY" re-set in Big
   Shoulders Display, white and gold, for contrast on navy.
-- **Geometry** — CSS `--ck` on `.ckwrap` sets the *yellow box* size (42px
-  desktop / 38px at ≤640). The check's swash overhangs the box up and to the
-  right, so the image is absolutely positioned out of flow; the nav stays 70px
-  tall at every width. The overhang ratios in the CSS come from the measured
+- **Geometry** — CSS `--ck` on `.ckwrap` sets the *yellow box* size (**52px
+  desktop / 43px at ≤640**, enlarged 2026-09-01 at client request). The check's
+  swash overhangs the box up and to the right, so the image is absolutely
+  positioned out of flow. The nav bar is **84px tall on desktop and stays 70px
+  at ≤640** so the sticky header does not eat the mobile viewport. The
+  overhang ratios in the CSS come from the measured
   sub-pixel box edges in the master and should not be hand-tweaked — re-run the
   extraction script instead.
 
@@ -113,6 +139,10 @@ Favicon/touch icons are the logo's ballot-box mark cropped; `og-card.png` is the
 full logo centered on white at 1200x630.
 
 ## Type & color
+- Section eyebrows (`.eyebrow`) run `clamp(17px,1.8vw,21px)` at `.15em` tracking
+  (was a flat 14px at `.22em`) — enlarged 2026-09-01. The tracking came down
+  with the size so the longest label, "The Case for Measure G", still clears
+  320px. They stay well under the H2 (21px vs 60px on desktop).
 - Display: Big Shoulders Display (700/800/900) — condensed civic poster face.
 - Body: Public Sans (400–700).
 - Navy `#0b1c2c` / `#10283c` / `#173d59`, cobalt `#1450cc`, campaign gold

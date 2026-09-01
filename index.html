@@ -107,11 +107,11 @@ section{padding:76px 0}
 /* ---------- shared bits ---------- */
 .eyebrow{
   font-family:'Big Shoulders Display','Big Shoulders',sans-serif;
-  font-weight:700;text-transform:uppercase;letter-spacing:.22em;
-  font-size:14px;color:var(--cobalt);
-  display:flex;align-items:center;gap:11px;margin-bottom:16px;
+  font-weight:700;text-transform:uppercase;letter-spacing:.15em;
+  font-size:clamp(17px,1.8vw,21px);line-height:1.15;color:var(--cobalt);
+  display:flex;align-items:center;gap:12px;margin-bottom:18px;
 }
-.eyebrow::before{content:"";width:26px;height:3px;background:var(--gold);flex:none}
+.eyebrow::before{content:"";width:32px;height:3px;background:var(--gold);flex:none}
 .eyebrow.on-dark{color:var(--gold-300)}
 .eyebrow.centered{justify-content:center}
 
@@ -168,7 +168,7 @@ h2+.lead,h2+p{margin-top:18px}
 /* ---------- sticky nav ---------- */
 .nav{position:sticky;top:0;z-index:80;background:var(--navy-900);box-shadow:0 1px 0 var(--hair-d);transition:box-shadow .2s ease}
 .nav.scrolled{box-shadow:0 12px 34px -18px rgba(0,0,0,.8)}
-.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:70px;padding-top:10px;padding-bottom:10px}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:84px;padding-top:10px;padding-bottom:10px}
 .brand{display:flex;align-items:center;gap:12px;flex:none}
 .brandmark{
   width:46px;height:46px;flex:none;border-radius:var(--r);
@@ -188,9 +188,9 @@ h2+.lead,h2+p{margin-top:18px}
    official logo's own pixels, cropped out of _originals/logo-yes-on-g.png by
    _verify/round5/extract-mark.py, tail and all.  --ck is the size of the YELLOW
    BOX; the swash overhangs the box up and to the right, so the image is placed
-   out of flow and the nav keeps its 70px height. */
-.brand-lockup{gap:20px;align-items:center}
-.ckwrap{--ck:42px;position:relative;flex:none;width:var(--ck);height:var(--ck)}
+   out of flow and the nav keeps its fixed height (84px desktop / 70px mobile). */
+.brand-lockup{gap:22px;align-items:center}
+.ckwrap{--ck:52px;position:relative;flex:none;width:var(--ck);height:var(--ck)}
 .ckwrap img{
   position:absolute;max-width:none;
   left:calc(var(--ck) * -0.00341);
@@ -201,11 +201,11 @@ h2+.lead,h2+p{margin-top:18px}
 .brandtext-lk{display:flex;flex-direction:column;line-height:1}
 .brandtext-lk strong{
   font-family:'Big Shoulders Display','Big Shoulders',sans-serif;font-weight:800;
-  font-size:27px;letter-spacing:.015em;color:#fff;text-transform:uppercase;white-space:nowrap;
+  font-size:33px;letter-spacing:.015em;color:#fff;text-transform:uppercase;white-space:nowrap;
 }
 .brandtext-lk small{
-  font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;
-  color:var(--gold-300);margin-top:5px;font-weight:700;white-space:nowrap;
+  font-size:11px;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--gold-300);margin-top:6px;font-weight:700;white-space:nowrap;
 }
 .navlinks{display:flex;align-items:center;gap:26px}
 .navlinks a.lnk{font-size:14.5px;font-weight:600;color:#dbe6f0;position:relative;padding:4px 0}
@@ -506,18 +506,25 @@ details.arg[open]>summary .chev{transform:rotate(180deg)}
 .donate .lead{color:#4d3c0d}
 .donatebox{background:var(--navy-900);border-radius:var(--r);padding:30px 28px 32px;text-align:center;box-shadow:var(--shadow)}
 .amt-label{font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;font-weight:700;color:#8fa8bd;margin-bottom:10px}
-.donatebox .amt{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:18px;opacity:.72}
+.donatebox .amt{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:18px}
 .donatebox .amt span{
   border:1.5px solid var(--hair-d);border-radius:var(--r);padding:12px 4px 10px;color:#e6eef6;
   font-family:'Big Shoulders Display','Big Shoulders',sans-serif;font-weight:800;font-size:20px;line-height:1;
 }
-.soon{
-  margin-top:16px;background:rgba(255,255,255,.06);border:1px solid var(--hair-d);border-radius:var(--r);
-  padding:15px 16px;text-align:left;display:flex;gap:11px;align-items:flex-start;
+/* Donations are handled by email, so the address is also printed as plain
+   selectable text — a phone with no mail client configured cannot follow the
+   mailto: and still needs to be able to read and copy it. */
+.mailnote{margin-top:16px;text-align:center;font-size:13.5px;line-height:1.5}
+.mailnote .mail-label{color:#9fb4c6}
+.mailnote .mail-addr{
+  display:inline-block;margin-top:5px;font-size:17px;font-weight:700;color:var(--gold-300);
+  word-break:break-word;-webkit-user-select:all;user-select:all;
 }
-.soon svg{width:20px;height:20px;flex:none;color:var(--gold);margin-top:2px}
-.soon p{font-size:13.5px;line-height:1.5;color:#c3d3e0}
-.soon p b{color:#fff;display:block;font-size:14px;margin-bottom:3px}
+.mailnote .mail-addr:hover{color:var(--gold)}
+.donate-fine{
+  margin-top:16px;padding-top:14px;border-top:1px solid var(--hair-d);
+  font-size:13px;line-height:1.5;color:#9fb4c6;text-align:left;
+}
 
 /* ---------- share ---------- */
 .share{background:var(--paper)}
@@ -628,10 +635,13 @@ footer ul{list-style:none;display:flex;flex-direction:column;gap:9px}
   /* Keep the gold-highlighted phrase together so it reads as one block. */
   .hero h1 .hl{display:inline-block}
   .hero .kicker{font-size:12.5px;letter-spacing:.13em;text-align:center;text-wrap:balance}
-  .brand-lockup{gap:17px}
-  .ckwrap{--ck:38px}
-  .brandtext-lk strong{font-size:21px}
-  .brandtext-lk small{font-size:8.5px;letter-spacing:.16em;margin-top:4px}
+  /* Mobile scales the lockup up less than desktop so the sticky header does
+     not eat the viewport — the bar stays 70px tall here. */
+  .nav .wrap{min-height:70px}
+  .brand-lockup{gap:15px}
+  .ckwrap{--ck:43px}
+  .brandtext-lk strong{font-size:24px}
+  .brandtext-lk small{font-size:9.5px;letter-spacing:.15em;margin-top:5px}
 }
 @media (max-width:380px){
   :root{--pad:15px}
@@ -1124,14 +1134,16 @@ footer ul{list-style:none;display:flex;flex-direction:column;gap:9px}
         </div>
         <div class="donatebox">
           <p class="amt-label">Suggested contribution</p>
-          <div class="amt" aria-hidden="true"><span>$25</span><span>$50</span><span>$100</span><span>$250</span></div>
-          <!-- DONATE HOOK: replace href with the committee's compliant processor URL
-               (Anedot / ActBlue-equivalent / WinRed-equivalent) and delete the .soon block. -->
-          <a class="btn btn-gold btn-block" href="#donate" aria-describedby="donate-soon">Donate to Yes on G</a>
-          <div class="soon" id="donate-soon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9.2"/><path d="M12 7.4v5l3 1.8"/></svg>
-            <p><b>Online donations opening soon.</b>Contributions by mail can be sent to the committee treasurer — mailing address to be posted here. Contributions to a California ballot measure committee are not tax-deductible.</p>
-          </div>
+          <div class="amt"><span>$25</span><span>$50</span><span>$100</span><span>$250</span></div>
+          <!-- DONATION FLOW: the committee takes contributions by email, not through
+               an online processor. If a compliant processor is added later, swap the
+               href below and the .mailnote block for the processor URL. -->
+          <a class="btn btn-gold btn-block" href="mailto:tom@pci.vote?subject=Measure%20G%20donation">Email to Donate</a>
+          <p class="mailnote">
+            <span class="mail-label">Contributions are handled by email &mdash; write us with the amount you'd like to give.</span><br />
+            <a class="mail-addr" href="mailto:tom@pci.vote?subject=Measure%20G%20donation">tom@pci.vote</a>
+          </p>
+          <p class="donate-fine">Contributions to a California ballot measure committee are not tax-deductible.</p>
         </div>
       </div>
     </div>
@@ -1215,17 +1227,17 @@ footer ul{list-style:none;display:flex;flex-direction:column;gap:9px}
           <a href="#" aria-label="YouTube (link to be supplied)" title="YouTube — link TBD"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.6 7.2a2.5 2.5 0 0 0-1.8-1.8C18.2 5 12 5 12 5s-6.2 0-7.8.4A2.5 2.5 0 0 0 2.4 7.2 26 26 0 0 0 2 12a26 26 0 0 0 .4 4.8 2.5 2.5 0 0 0 1.8 1.8C5.8 19 12 19 12 19s6.2 0 7.8-.4a2.5 2.5 0 0 0 1.8-1.8A26 26 0 0 0 22 12a26 26 0 0 0-.4-4.8ZM10 15V9l5.2 3L10 15Z"/></svg></a>
         </div>
         <ul style="margin-top:18px">
+          <li><a href="mailto:Hello@safesutteryesong.com">Hello@safesutteryesong.com</a></li>
           <li><a href="https://www.sutter.gov/government/county-departments/clerk-recorder/elections" target="_blank" rel="noopener">Official Sutter County election information</a></li>
           <li><a href="#endorse">Contact the campaign</a></li>
         </ul>
       </div>
     </div>
-    <!-- FPPC DISCLOSURE — required by law. Committee name and address confirmed by
-         the campaign. The ID has not been issued yet:
-         insert FPPC ID here when issued -->
+    <!-- FPPC DISCLOSURE — required by law. Committee name, address and ID number
+         confirmed by the campaign. Wording below is the client's, verbatim. -->
     <p class="disclosure">
-      Paid for by Neighbors for a Safe Sutter County &ndash; Yes on Measure G &middot; 2057 Pheasant Drive, Yuba City, CA 95993<br />
-      <span class="fppc">FPPC ID number pending.</span>
+      AD Paid for by Neighbors For A Safe Sutter County &mdash; Yes On Measure G &middot; 2057 Pheasant Drive, Yuba City, CA 95993<br />
+      <span class="fppc">ID# 1494598</span>
     </p>
     <p class="colophon">&copy; 2026 Yes on Measure G. All rights reserved.</p>
   </div>
