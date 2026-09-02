@@ -389,15 +389,20 @@ h2+.lead,h2+p{margin-top:18px}
   display:grid;grid-template-columns:300px 1fr;gap:0;background:var(--navy-900);
   border-radius:var(--r);overflow:hidden;box-shadow:var(--shadow);margin-bottom:34px;
 }
-/* Portrait slot — swap this block for <img src="assets/img/barnes.jpg" alt="Sheriff Brandon Barnes"> */
+/* Portrait slot — campaign-owned photo, so it runs in full color. No .duo
+   duotone here: that treatment exists to unify the borrowed reference shots. */
 .portrait{
-  background:linear-gradient(160deg,var(--navy-700),var(--navy-950));
-  min-height:300px;display:flex;flex-direction:column;align-items:center;justify-content:center;
-  gap:12px;color:#7f9bb3;text-align:center;padding:26px;border-right:1px solid var(--hair-d);
+  position:relative;overflow:hidden;background:var(--navy-950);
+  min-height:300px;border-right:1px solid var(--hair-d);
 }
-.portrait svg{width:60px;height:60px;opacity:.5}
-.portrait span{font-family:'Big Shoulders Display','Big Shoulders',sans-serif;font-weight:700;
-  text-transform:uppercase;letter-spacing:.15em;font-size:12px;line-height:1.5}
+/* Top-anchored: the slot crops horizontally on desktop and vertically on
+   mobile, and the subject's head sits right at the top edge of the frame. */
+.portrait img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 0}
+/* Same navy settle the rest of the card uses, just at the photo's bottom edge. */
+.portrait::after{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(to bottom,rgba(7,22,36,0) 62%,rgba(7,22,36,.42) 100%);
+}
 .featured .body{padding:38px 40px 36px;color:#fff;display:flex;flex-direction:column;justify-content:center}
 .featured blockquote{
   font-family:'Big Shoulders Display','Big Shoulders',sans-serif;font-weight:700;
@@ -600,7 +605,9 @@ footer ul{list-style:none;display:flex;flex-direction:column;gap:9px}
   .statrow{grid-template-columns:1fr;gap:14px;margin-top:34px}
   .statfig{padding:24px 22px 26px}
   .featured{grid-template-columns:1fr}
-  .portrait{min-height:230px;border-right:0;border-bottom:1px solid var(--hair-d)}
+  /* Stacked: give the photo a 5:4 band instead of a fixed strip so the crop
+     stays shallow enough to keep the whole head in frame. */
+  .portrait{min-height:0;aspect-ratio:5/4;border-right:0;border-bottom:1px solid var(--hair-d)}
   .featured .body{padding:30px 26px 32px}
   .localbar{flex-direction:column;align-items:flex-start;padding:28px 24px}
   .localbar .btn{width:100%}
@@ -899,13 +906,10 @@ footer ul{list-style:none;display:flex;flex-direction:column;gap:9px}
         <p class="lead">Measure G is supported by the people who answer the calls, work the land, run the shops and raise their families here.</p>
       </div>
 
-      <!-- FEATURED ENDORSER — quote confirmed; photo pending campaign approval. -->
+      <!-- FEATURED ENDORSER -->
       <div class="featured">
-        <div class="portrait" aria-label="Photo of Sheriff Brandon Barnes — pending">
-          <!-- PHOTO SLOT: replace this whole block with
-               <img src="assets/img/barnes.jpg" alt="Sheriff Brandon Barnes" style="width:100%;height:100%;object-fit:cover"> -->
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8.5" r="4"/><path d="M4 21c0-4.2 3.6-7 8-7s8 2.8 8 7"/></svg>
-          <span>Campaign photo<br />to be supplied</span>
+        <div class="portrait">
+          <img src="assets/img/sheriff-barnes.jpg" alt="Sutter County Sheriff Brandon Barnes in uniform" width="641" height="641" loading="lazy" decoding="async" />
         </div>
         <div class="body">
           <div class="eyebrow on-dark">Featured Endorser</div>

@@ -27,15 +27,21 @@ folder; that is the whole stack.
 Because the site is now public, every unresolved item below is **live-visible**
 to voters and press.
 
-**Still open (as of round 8, 2026-09-01):**
+**Still open (as of round 9, 2026-09-02):**
 1. **Ballot argument** — the *argument in favor* is still prototype text.
-2. **Featured endorser photo + photography rights** — the Sheriff Barnes
-   portrait is a placeholder block, and the four `assets/img/` photos are
-   uncleared third-party reference images.
+2. **General photography rights** — the four scene photos in `assets/img/`
+   (water tower ×2, fire badge, sheriff's office) are still uncleared
+   third-party reference images under the duotone wash. The Sheriff Barnes
+   portrait is *not* one of these — it is campaign-supplied and cleared.
 3. **Client sign-off on the modified header lockup.**
 4. **Endorsement form backend** — submissions currently go nowhere.
 
 (Also still TBD but not blocking: the three footer social `href`s.)
+
+**Closed in round 9 (2026-09-02):** the featured endorser portrait. The
+campaign-supplied Sheriff Barnes photo is live in the `.portrait` slot in full
+color (no duotone — it is owned art), master in `assets/img/_originals/`.
+Evidence: `_verify/round9/`.
 
 **Closed in round 8 (2026-09-01):** FPPC ID issued and in the disclosure;
 donations now run through email, so no processor URL is needed; the campaign
@@ -68,8 +74,21 @@ Search `index.html` for these:
    scroll to `#donate` — the context and the disclosure live there. If a
    compliant processor is ever added, see the DONATION FLOW comment.
 5. **Social links** (footer `.socials`) — all `href="#"`, marked TBD.
-6. **Featured endorser photo** (`.portrait`) — placeholder block with swap
-   instructions inline. Quote from Sheriff Barnes is in place.
+6. ~~**Featured endorser photo**~~ (`.portrait`) — **DONE 2026-09-02.** The
+   campaign-supplied Sheriff Barnes portrait ships as
+   `assets/img/sheriff-barnes.jpg` (progressive JPEG, q85, 641×641 — the
+   source's native size; it is not upscaled). Master PNG in
+   `assets/img/_originals/sheriff-barnes.png`, which is deploy-excluded.
+   It runs in **full color** — the `.duo` duotone is deliberately not applied,
+   because that treatment exists to hide the resolution of the borrowed
+   reference shots and this photo is owned. Framing: the slot is 300×300 at
+   desktop (no crop at all — the source is square) and a 5:4 band when the card
+   stacks at ≤900px, where `object-position:50% 0` top-anchors the image so the
+   head is never clipped. A soft navy gradient on the photo's bottom edge ties
+   it to the card. Sharpness: 641px covers a 300 CSS px desktop slot at exactly
+   2×; on a 3× phone the slot wants ~1060 device px and gets 641, so the mobile
+   render is ~1.8× — slightly soft under close inspection, not upscalable
+   without inventing detail. A larger master from the campaign would fix it.
 7. **Endorsement wall** (`.wall`) — **TEMPORARILY REMOVED at client request
    2026-08-31.** The eight role-based "your name here" tiles *and* the "100+
    Neighbors & counting" badge (`.counter`) are commented out in `index.html`;
@@ -79,9 +98,11 @@ Search `index.html` for these:
    lines wrapping those two blocks — the CSS was left in place untouched, so
    uncommenting is the whole job. Then replace each `.slot` with a real
    endorser card (name, title/org, city).
-8. **Photography** — the four images in `assets/img/` are low-resolution
-   third-party reference photos under a duotone wash. **Rights are not cleared.**
-   Replace with campaign-owned photography before the site goes public.
+8. **Photography** — the four *scene* images in `assets/img/` (water tower ×2,
+   fire badge, sheriff's office) are low-resolution third-party reference photos
+   under a duotone wash. **Rights are not cleared.** Replace with campaign-owned
+   photography. The Sheriff Barnes portrait is excluded from this item: it is
+   campaign-supplied, cleared, and runs in full color (see 6).
 9. ~~**`<meta name="robots" content="noindex, nofollow">`**~~ — **DONE
    2026-08-31.** Meta removed from `index.html`; `X-Robots-Tag` header block
    removed from `vercel.json`. The site is indexable.
