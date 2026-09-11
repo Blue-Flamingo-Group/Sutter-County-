@@ -168,3 +168,18 @@ full logo centered on white at 1200x630.
 - Body: Public Sans (400–700).
 - Navy `#0b1c2c` / `#10283c` / `#173d59`, cobalt `#1450cc`, campaign gold
   `#f3b539`, cream `#faf5ea`.
+
+## Before making this repository public
+
+`assets/img/_originals/` is tracked in git history. Review it before changing
+this repo's visibility — removing the files in a later commit does **not**
+remove them from history.
+
+It holds the campaign logo masters and photography, plus the two reversed
+knockout logo proposals that recolor a client brand asset. Those proposals were
+never approved by the committee and were deliberately never deployed.
+
+If this repo is ever made public, strip that folder from history first
+(`git filter-repo --path assets/img/_originals --invert-paths`) rather than
+deleting it in a new commit.
+
