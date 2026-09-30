@@ -506,6 +506,9 @@ details.arg[open]>summary .chev{transform:rotate(180deg)}
 }
 .field input:focus,.field textarea:focus{border-color:var(--cobalt);outline:none;box-shadow:0 0 0 3px rgba(20,80,204,.15)}
 .field textarea{min-height:88px;resize:vertical;font-family:inherit}
+.trap{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.ferror{margin-top:14px;color:#b42318}
+.ferror a{color:inherit}
 .consent{display:flex;gap:11px;align-items:flex-start;font-size:14px;color:var(--ink-2);line-height:1.5;margin:6px 0 20px}
 .consent input{width:20px;height:20px;flex:none;margin-top:2px;accent-color:var(--cobalt)}
 .thanks{
@@ -1084,21 +1087,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
 
         <div class="formcard">
-          <!-- BACKEND HOOK ------------------------------------------------------
-               This form is intentionally NOT wired to a handler yet — the campaign
-               has not supplied a destination. To connect it:
-                 1. Set action="<handler URL>" and method="post" on <form>, e.g. a
-                    Formspree / Netlify Forms / Google Form / NationBuilder endpoint.
-                 2. Delete the onsubmit handler below (or keep it and POST via fetch
-                    inside handleEndorse() for the inline thank-you experience).
-               Field names are already set: name, city, email, phone, title, why, consent.
-          -------------------------------------------------------------------- -->
+          <!-- Posts to /api/endorse (see api/endorse.js). The campaign inbox
+               address lives only in the server environment, never in this file.
+               Without JS the form still posts normally and comes back with
+               ?endorse=ok|error. -->
           <!-- Official campaign logo. The form card is white, which is the only
                kind of ground this blue-on-transparent lockup can sit on. -->
           <div class="formlogo">
             <img class="lockup lockup-form" src="assets/img/logo-yes-on-g.png" width="900" height="481" alt="Yes on Measure G — A Safe Sutter County" />
           </div>
-          <form id="endorseForm" novalidate>
+          <form id="endorseForm" method="post" action="/api/endorse" novalidate>
             <h3>Endorsement Form</h3>
             <p class="small">Fields marked * are required.</p>
             <div class="frow">
@@ -1133,14 +1131,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               <input type="checkbox" id="f-consent" name="consent" required />
               <span>I endorse Measure G and give the campaign permission to contact me about publicly listing my endorsement. *</span>
             </label>
+            <div class="trap" aria-hidden="true">
+              <label for="f-website">Website</label>
+              <input id="f-website" name="website" tabindex="-1" autocomplete="off" />
+            </div>
             <button class="btn btn-cobalt btn-block" type="submit">Submit My Endorsement</button>
+            <p class="small ferror" id="endorseError" role="alert" hidden>Something went wrong and your endorsement was not sent. Please try again in a moment, or email <a href="mailto:Hello@safesutteryesong.com">Hello@safesutteryesong.com</a>.</p>
           </form>
 
           <div class="thanks" id="thanks" role="status" aria-live="polite">
             <div class="tick" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></div>
             <h3>Thank you, neighbor.</h3>
-            <p>Your endorsement has been recorded. Someone from the campaign will follow up about listing your name on the endorsement wall.</p>
-            <p class="small" style="margin-top:14px">Setup note for the campaign: this form is not yet connected to a submission handler, so nothing was sent. Send us the destination address and we'll wire it up.</p>
+            <p>Your endorsement has been sent to the campaign. Someone will follow up about listing your name on the endorsement wall.</p>
           </div>
         </div>
       </div>
@@ -1339,19 +1341,40 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     });
   }
 
-  /* --- endorsement form: inline thank-you (no backend wired yet) --- */
+  /* --- endorsement form: posts to /api/endorse, inline thank-you --- */
   var form = document.getElementById('endorseForm');
   var thanks = document.getElementById('thanks');
+  var ferr = document.getElementById('endorseError');
+  function showThanks() {
+    form.style.display = 'none';
+    thanks.classList.add('show');
+    thanks.scrollIntoView({ block: 'center', behavior: 'smooth' });
+  }
   if (form && thanks) {
+    // No-JS submissions come back here with a status flag.
+    var flag = new URLSearchParams(location.search).get('endorse');
+    if (flag === 'ok') showThanks();
+    if (flag === 'error' && ferr) ferr.hidden = false;
+    if (flag) history.replaceState(null, '', location.pathname + '#endorse');
+
     form.addEventListener('submit', function (e) {
       e.preventDefault();
       if (!form.reportValidity()) return;
-      // BACKEND HOOK: POST the FormData here once the campaign supplies a handler.
-      // var data = new FormData(form);
-      // fetch(HANDLER_URL, { method: 'POST', body: data });
-      form.style.display = 'none';
-      thanks.classList.add('show');
-      thanks.scrollIntoView({ block: 'center', behavior: 'smooth' });
+      var btn = form.querySelector('button[type="submit"]');
+      btn.disabled = true;
+      if (ferr) ferr.hidden = true;
+      var data = {};
+      new FormData(form).forEach(function (v, k) { data[k] = v; });
+      fetch('/api/endorse', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify(data)
+      }).then(function (r) { return r.ok ? r.json() : { ok: false }; })
+        .then(function (d) {
+          if (d && d.ok) { form.reset(); showThanks(); }
+          else { if (ferr) ferr.hidden = false; btn.disabled = false; }
+        })
+        .catch(function () { if (ferr) ferr.hidden = false; btn.disabled = false; });
     });
   }
 })();

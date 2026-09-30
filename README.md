@@ -34,7 +34,7 @@ to voters and press.
    third-party reference images under the duotone wash. The Sheriff Barnes
    portrait is *not* one of these — it is campaign-supplied and cleared.
 3. **Client sign-off on the modified header lockup.**
-4. **Endorsement form backend** — submissions currently go nowhere.
+4. ~~**Endorsement form backend**~~ — **DONE 2026-09-30**, see "Endorsement form" below.
 
 (Also still TBD but not blocking: the three footer social `href`s.)
 
@@ -62,8 +62,24 @@ Search `index.html` for these:
    prototype's text with a visible "final text pending" note. Replace with the
    filed argument verbatim, then delete the `.pending` block. The second
    expandable, the **rebuttal**, is the real filed text and is final.
-3. **Endorsement form** (`#endorseForm`) — no handler wired. See the BACKEND HOOK
-   comment above the form and in the script.
+3. ~~**Endorsement form**~~ (`#endorseForm`) — **DONE 2026-09-30.**
+   `api/endorse.js` is a Vercel serverless function (Node, no dependencies).
+   The page posts the form fields as JSON to `/api/endorse`; the function
+   validates name / city / email / consent, drops anything that filled the
+   hidden `website` honeypot, and sends **one notification email** to the
+   campaign inbox via Resend with `Reply-To` set to the endorser. Nothing is
+   stored. Without JavaScript the form posts normally and the function
+   redirects back to `/?endorse=ok|error#endorse`, which the page turns into
+   the same thank-you or error state.
+
+   Environment variables on the Vercel project (values never in the repo):
+   - `RESEND_API_KEY` — Syronius Resend account (Doppler `teardown/dev`).
+   - `ENDORSE_TO` — the campaign inbox. Production: `Hello@safesutteryesong.com`
+     (given by Sy 2026-09-30). Preview + Development: `delivered@resend.dev`
+     (Resend's test sink) so test submissions never reach the campaign.
+   - `ENDORSE_FROM` — `Yes on Measure G Website <measureg@send.getteardown.com>`.
+     To send from the site's own domain, verify `safesutteryesong.com` in
+     Resend, add its DNS records at GoDaddy, then change this value.
 4. ~~**Donate**~~ (`#donate`) — **DONE 2026-09-01.** There is no online
    processor; the committee takes contributions **by email at tom@pci.vote**.
    The section's primary button is a `mailto:` with the subject "Measure G
