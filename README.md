@@ -36,7 +36,7 @@ to voters and press.
 3. **Client sign-off on the modified header lockup.**
 4. ~~**Endorsement form backend**~~ — **DONE 2026-09-30**, see "Endorsement form" below.
 
-(Also still TBD but not blocking: the three footer social `href`s.)
+(Footer socials: Facebook wired 2026-10-01; Instagram/YouTube placeholders removed until accounts exist.)
 
 **Closed in round 9 (2026-09-02):** the featured endorser portrait. The
 campaign-supplied Sheriff Barnes photo is live in the `.portrait` slot in full
