@@ -53,7 +53,7 @@ Evidence: `_verify/round8/`.
 Search `index.html` for these:
 1. ~~**FPPC disclosure**~~ (`class="disclosure"`) — **DONE 2026-09-01.** The ID
    was issued. The disclosure now reads, in the client's own wording verbatim,
-   "AD Paid for by Neighbors For A Safe Sutter County / Yes On Measure G ·
+   "AD Paid for by Neighbors For A Safe Sutter County -- Yes On Measure G ·
    2057 Pheasant Drive, Yuba City, CA 95993 / **ID# 1494598**". The street
    address was kept because it is part of the committee identification. Note the
    `.disclosure` rule sets `text-transform:uppercase`, so the line renders in
