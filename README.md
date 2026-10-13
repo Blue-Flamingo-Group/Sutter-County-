@@ -110,8 +110,9 @@ Search `index.html` for these:
    `#rosterList`): 64 names supplied by the campaign, leaders and first
    responders first in the campaign's order, then neighbors alphabetical by
    last name, with a "titles for identification purposes only" line. The
-   "Neighbors & counting" badge (`.counter`) is back and its number is set by
-   the inline script from the list length, so adding an `<li>` updates it.
+   "Neighbors & counting" badge was removed for good the same day at Sy's
+   request; the count in the roster eyebrow is hand-set, so update it when
+   adding names.
    Four names in the campaign's sheet were handled with judgment and are
    flagged for client confirmation: "Jeramy Chapdedlaine" was treated as a
    duplicate of "Jeramy Chapdelaine" (one entry kept); "Officer Steve" (no last
