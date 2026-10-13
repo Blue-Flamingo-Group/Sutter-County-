@@ -428,17 +428,12 @@ h2+.lead,h2+p{margin-top:18px}
 .featured .who{border-left:4px solid var(--gold);padding-left:16px}
 .featured .who strong{display:block;font-size:19px;font-weight:700;color:#fff;line-height:1.2}
 .featured .who span{font-size:14px;color:#9fb6c8}
-.wall{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
-.slot{
-  border:2px dashed rgba(20,80,204,.32);border-radius:var(--r);background:var(--cobalt-100);
-  padding:24px 18px;text-align:center;transition:.2s ease;
-}
-.slot:hover{background:var(--gold-050);border-color:var(--gold-600)}
-.slot strong{
-  display:block;font-family:'Big Shoulders Display','Big Shoulders',sans-serif;font-weight:800;
-  text-transform:uppercase;font-size:19px;line-height:1.02;color:var(--navy-800);margin-bottom:8px;
-}
-.slot span{display:block;font-size:12.5px;letter-spacing:.09em;text-transform:uppercase;font-weight:600;color:var(--cobalt)}
+.roster{margin-top:34px}
+.roster ul{list-style:none;margin:0;padding:0;columns:4;column-gap:32px}
+.roster li{break-inside:avoid;padding:9px 0;border-bottom:1px solid var(--hair-l);line-height:1.3}
+.roster li strong{display:block;font-size:15.5px;font-weight:700;color:var(--navy-800)}
+.roster li span{display:block;font-size:12px;letter-spacing:.07em;text-transform:uppercase;font-weight:600;color:var(--cobalt);margin-top:2px}
+.roster-fine{margin-top:14px;color:var(--ink-2)}
 .wall-note{text-align:center;margin-top:26px}
 .counter{
   display:inline-flex;align-items:baseline;gap:10px;background:var(--navy-900);color:#fff;
@@ -608,7 +603,7 @@ footer ul{list-style:none;display:flex;flex-direction:column;gap:9px}
 @media (max-width:1040px){
   .servicebar .grid{grid-template-columns:repeat(3,1fr)}
   .guards{grid-template-columns:repeat(2,1fr)}
-  .wall{grid-template-columns:repeat(3,1fr)}
+  .roster ul{columns:3}
   .footgrid{grid-template-columns:1fr 1fr}
 }
 @media (max-width:900px){
@@ -641,7 +636,8 @@ footer ul{list-style:none;display:flex;flex-direction:column;gap:9px}
   .servicebar .grid{grid-template-columns:repeat(2,1fr)}
   .servicebar .svc:last-child{grid-column:1 / -1}
   .svc{padding:22px 12px 20px}
-  .guards,.wall{grid-template-columns:repeat(2,1fr)}
+  .guards{grid-template-columns:repeat(2,1fr)}
+  .roster ul{columns:2}
   .footgrid{grid-template-columns:1fr;gap:30px}
   .frow{grid-template-columns:1fr;gap:0}
   .frow .field{margin-bottom:14px}
@@ -677,7 +673,6 @@ footer ul{list-style:none;display:flex;flex-direction:column;gap:9px}
   .brandtext strong{font-size:20px}
   .brandmark{width:40px;height:40px;font-size:27px}
   .servicebar .grid{grid-template-columns:1fr}
-  .wall{grid-template-columns:1fr}
   .guards{grid-template-columns:1fr}
   .mobile-cta .btn{font-size:13.5px;letter-spacing:.04em;padding:12px 2px 10px}
   .btn-row .btn{width:100%}
@@ -945,44 +940,83 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
       </div>
 
-      <!-- ==================================================================
-           TEMPORARILY REMOVED AT CLIENT REQUEST 2026-08-31
-           RESTORE WHEN REAL ENDORSERS ARRIVE.
-
-           Two things are commented out in this section, both marked
-           "RESTORE 2026-08-31" below:
-             (a) the eight role based placeholder tiles (.wall / .slot)
-             (b) the "100+ Neighbors and counting" badge (.counter)
-
-           To restore: delete the four comment marker lines that wrap those
-           two blocks. Nothing else changed. The supporting CSS
-           (.wall, .slot, .counter, and their breakpoint rules) was left in
-           place untouched, so uncommenting is the whole job.
-
-           Still live in this section: the featured Sheriff Barnes block
-           above, and the Add Your Name / Donate / Share row below.
-
-           ORIGINAL NOTE ON THE WALL: placeholder wall, designed to grow to
-           100+. Replace each .slot with a real endorser card as names are
-           confirmed (name, title/org, city).
-           ================================================================== -->
-      <!-- RESTORE 2026-08-31 (a) placeholder tiles: uncomment from here
-      <div class="wall">
-        <div class="slot"><strong>Firefighter</strong><span>Your name here</span></div>
-        <div class="slot"><strong>Deputy Sheriff</strong><span>Your name here</span></div>
-        <div class="slot"><strong>Local Farmer</strong><span>Your name here</span></div>
-        <div class="slot"><strong>Small Business Owner</strong><span>Your name here</span></div>
-        <div class="slot"><strong>Nurse</strong><span>Your name here</span></div>
-        <div class="slot"><strong>Teacher</strong><span>Your name here</span></div>
-        <div class="slot"><strong>Taxpayer Advocate</strong><span>Your name here</span></div>
-        <div class="slot"><strong>Neighbor</strong><span>Yuba City &middot; Live Oak</span></div>
+      <!-- ENDORSER ROSTER — names supplied by the campaign 2026-10-13.
+           Leaders and first responders first (campaign order), then neighbors
+           alphabetically by last name. Add new names as <li> rows; the count
+           badge below is computed from this list by the inline script. -->
+      <div class="roster">
+        <div class="eyebrow">Endorsed by 64 of your neighbors</div>
+        <ul id="rosterList">
+        <li><strong>The Honorable Dan Flores</strong></li>
+        <li><strong>Chief Kyle Long</strong><span>Fire Chief</span></li>
+        <li><strong>Chief Jim Runyen</strong><span>Police Chief</span></li>
+        <li><strong>Captain John Cooper</strong></li>
+        <li><strong>Chief Josh Hubbard</strong><span>Fire Chief</span></li>
+        <li><strong>The Honorable Marc Boomgaarden</strong><span>Mayor, Yuba City</span></li>
+        <li><strong>The Honorable Toni Cole</strong><span>Yuba City Councilmember</span></li>
+        <li><strong>Jarin Mann</strong><span>Yuba City Firefighter</span></li>
+        <li><strong>Steve DeNeef</strong><span>Vice President</span></li>
+        <li><strong>Alexander Herrera</strong></li>
+        <li><strong>Sheriff Brandon Barnes</strong><span>Sutter County Sheriff</span></li>
+        <li><strong>The Honorable Jeff Stephens</strong><span>Supervisor</span></li>
+        <li><strong>Karm Bains</strong><span>Farmer</span></li>
+        <li><strong>Joanna Alvarado</strong></li>
+        <li><strong>John Bernal</strong></li>
+        <li><strong>Cameron Boomgaarden</strong></li>
+        <li><strong>Jay Bordenkircher</strong></li>
+        <li><strong>Stacy Brookman</strong></li>
+        <li><strong>Karen Cartoscelli</strong></li>
+        <li><strong>John Cassidy</strong></li>
+        <li><strong>Jeramy Chapdelaine</strong></li>
+        <li><strong>Mike Chesini</strong></li>
+        <li><strong>Lal Chima</strong></li>
+        <li><strong>Stanley Cleveland, Jr.</strong></li>
+        <li><strong>JP Davis</strong></li>
+        <li><strong>Kyle Dobson</strong></li>
+        <li><strong>Steve Dunn</strong></li>
+        <li><strong>Eric England</strong></li>
+        <li><strong>Robert Epley</strong></li>
+        <li><strong>Kash Gill</strong></li>
+        <li><strong>Shon Harris</strong></li>
+        <li><strong>Lisa Herbert</strong></li>
+        <li><strong>Kurt Hilbers</strong></li>
+        <li><strong>John Hiller</strong></li>
+        <li><strong>Richard Horak</strong></li>
+        <li><strong>John Ithurburn</strong></li>
+        <li><strong>Melissa Jenkins</strong></li>
+        <li><strong>Raman K</strong></li>
+        <li><strong>Mary Langsdorf</strong></li>
+        <li><strong>Bill Meagher</strong></li>
+        <li><strong>Nathan Miller</strong></li>
+        <li><strong>Sierra Pedley</strong></li>
+        <li><strong>Joe Del Pero</strong></li>
+        <li><strong>Kevin Pohley</strong></li>
+        <li><strong>Daniel Preston</strong></li>
+        <li><strong>Rory Ramirez</strong></li>
+        <li><strong>Dave Savini</strong></li>
+        <li><strong>Sandry Savini</strong></li>
+        <li><strong>Bob Schultz</strong></li>
+        <li><strong>Dave Shaw</strong></li>
+        <li><strong>Jackie Sillman</strong></li>
+        <li><strong>Abby Smith</strong></li>
+        <li><strong>Shawnna Smith</strong></li>
+        <li><strong>Cherie Stephens</strong></li>
+        <li><strong>Andrew Stresser</strong></li>
+        <li><strong>John Taylor</strong></li>
+        <li><strong>Chandra Tucker</strong></li>
+        <li><strong>Robin Walther</strong></li>
+        <li><strong>Thomas Walther</strong></li>
+        <li><strong>Tom Walther</strong></li>
+        <li><strong>Brian Warta</strong></li>
+        <li><strong>John Weiler</strong></li>
+        <li><strong>Jim Whiteaker</strong></li>
+        <li><strong>Dan Young</strong></li>
+        </ul>
+        <p class="small roster-fine">Titles are for identification purposes only.</p>
       </div>
-      to here -->
 
       <div class="wall-note">
-        <!-- RESTORE 2026-08-31 (b) count badge: uncomment from here
-        <div class="counter"><b>100+</b><span>Neighbors &amp; counting</span></div>
-        to here -->
+        <div class="counter"><b id="rosterCount">64</b><span>Neighbors &amp; counting</span></div>
         <div class="btn-row centered">
           <a class="btn btn-navy" href="#endorse">Add Your Name</a>
           <a class="btn btn-outline" href="#donate">Donate</a>
@@ -1340,6 +1374,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       });
     });
   }
+
+  /* --- endorser count badge mirrors the roster list --- */
+  var rc = document.getElementById('rosterCount'), rl = document.getElementById('rosterList');
+  if (rc && rl) rc.textContent = rl.querySelectorAll('li').length;
 
   /* --- endorsement form: posts to /api/endorse, inline thank-you --- */
   var form = document.getElementById('endorseForm');

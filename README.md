@@ -105,15 +105,19 @@ Search `index.html` for these:
    2×; on a 3× phone the slot wants ~1060 device px and gets 641, so the mobile
    render is ~1.8× — slightly soft under close inspection, not upscalable
    without inventing detail. A larger master from the campaign would fix it.
-7. **Endorsement wall** (`.wall`) — **TEMPORARILY REMOVED at client request
-   2026-08-31.** The eight role-based "your name here" tiles *and* the "100+
-   Neighbors & counting" badge (`.counter`) are commented out in `index.html`;
-   search for `RESTORE 2026-08-31`. The section still runs the featured
-   Sheriff Barnes block plus the Add Your Name / Donate / Share row. To bring
-   the wall back when real endorsers arrive, delete the four comment marker
-   lines wrapping those two blocks — the CSS was left in place untouched, so
-   uncommenting is the whole job. Then replace each `.slot` with a real
-   endorser card (name, title/org, city).
+7. ~~**Endorsement wall**~~ — **DONE 2026-10-13 (round 11).** The placeholder
+   tiles are gone for good; the section now carries a real roster (`.roster`,
+   `#rosterList`): 64 names supplied by the campaign, leaders and first
+   responders first in the campaign's order, then neighbors alphabetical by
+   last name, with a "titles for identification purposes only" line. The
+   "Neighbors & counting" badge (`.counter`) is back and its number is set by
+   the inline script from the list length, so adding an `<li>` updates it.
+   Four names in the campaign's sheet were handled with judgment and are
+   flagged for client confirmation: "Jeramy Chapdedlaine" was treated as a
+   duplicate of "Jeramy Chapdelaine" (one entry kept); "Officer Steve" (no last
+   name) was left off; "Robiin Walther" was corrected to "Robin"; "Sandry
+   Savini" and the pair "Tom Walther" / "Thomas Walther" were kept exactly as
+   supplied. Evidence: `_verify/round11/`.
 8. **Photography** — the four *scene* images in `assets/img/` (water tower ×2,
    fire badge, sheriff's office) are low-resolution third-party reference photos
    under a duotone wash. **Rights are not cleared.** Replace with campaign-owned
